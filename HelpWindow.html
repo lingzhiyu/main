@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>AddressBook Level 4 - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Hospital Management System 2K18 - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="header"><h1>AddressBook Level 4 - User Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="header"><h1>Hospital Management System 2K18 - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>By: <code>Team SE-EDU</code>      Since: <code>Jun 2016</code>      Licence: <code>MIT</code></p>
+<p>By: <code>Team W14-3</code>      Since: <code>September 2018</code>      Licence: <code>MIT</code></p>
 </div>
 </div>
 <div id="toc" class="toc">
@@ -13,20 +13,27 @@
 <li><a href="#quick-start">2. Quick Start</a></li>
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
-<li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
-<li><a href="#adding-a-person-code-add-code">3.2. Adding a person: <code>add</code></a></li>
-<li><a href="#listing-all-persons-code-list-code">3.3. Listing all persons : <code>list</code></a></li>
-<li><a href="#editing-a-person-code-edit-code">3.4. Editing a person : <code>edit</code></a></li>
-<li><a href="#locating-persons-by-name-code-find-code">3.5. Locating persons by name: <code>find</code></a></li>
-<li><a href="#deleting-a-person-code-delete-code">3.6. Deleting a person : <code>delete</code></a></li>
-<li><a href="#selecting-a-person-code-select-code">3.7. Selecting a person : <code>select</code></a></li>
-<li><a href="#listing-entered-commands-code-history-code">3.8. Listing entered commands : <code>history</code></a></li>
-<li><a href="#undoing-previous-command-code-undo-code">3.9. Undoing previous command : <code>undo</code></a></li>
-<li><a href="#redoing-the-previously-undone-command-code-redo-code">3.10. Redoing the previously undone command : <code>redo</code></a></li>
-<li><a href="#clearing-all-entries-code-clear-code">3.11. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.12. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">3.13. Saving the data</a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.14. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#add-appointment-for-patient-code-addappt-code">3.1. Add appointment for patient: <code>addappt</code></a></li>
+<li><a href="#add-patient-s-dietary-needs-code-adddiet-code">3.2. Add patient’s dietary needs: <code>adddiet</code></a></li>
+<li><a href="#add-patient-medication-code-addmeds-code">3.3. Add patient medication: <code>addmeds</code></a></li>
+<li><a href="#add-to-patient-s-medical-history-code-addmh-code">3.4. Add to patient’s medical history: <code>addmh</code></a></li>
+<li><a href="#check-in-a-patient-code-checkin-code">3.5. Check-in a patient: <code>checkin</code></a></li>
+<li><a href="#check-out-a-patient-code-checkout-code">3.6. Check-out a patient: <code>checkout</code></a></li>
+<li><a href="#view-help-code-help-code">3.7. View help : <code>help</code></a></li>
+<li><a href="#sort-user-view-code-sort-code">3.8. Sort user view : <code>sort</code></a></li>
+<li><a href="#select-patient-code-select-code">3.9. Select patient: <code>select</code></a></li>
+<li><a href="#view-command">3.10. View patient’s information: <code>view</code></a></li>
+<li><a href="#view-all-appointments-for-a-patient-code-viewappt-code">3.11. View all appointments for a patient: <code>viewappt</code></a></li>
+<li><a href="#view-patient-s-dietary-needs-code-viewdiet-code">3.12. View patient’s dietary needs: <code>viewdiet</code></a></li>
+<li><a href="#view-patient-medication-code-view-meds-code">3.13. View patient medication: <code>view meds</code></a></li>
+<li><a href="#view-patient-s-medical-history-code-viewmh-code">3.14. View patient’s medical history: <code>viewmh</code></a></li>
+<li><a href="#view-patient-queue-code-viewqueue-code">3.15. View patient queue: <code>viewqueue</code></a></li>
+<li><a href="#view-patient-s-visitors-code-viewvisitors-code">3.16. View patient’s visitors: <code>viewvisitors</code></a></li>
+<li><a href="#sign-in-patient-s-visitors-code-visitorin-code">3.17. Sign in patient’s visitors: <code>visitorin</code></a></li>
+<li><a href="#sign-out-patient-s-visitors-code-visitorout-code">3.18. Sign out patient’s visitors: <code>visitorout</code></a></li>
+<li><a href="#cancel-appointment-for-patient-code-xappt-code">3.19. Cancel appointment for patient: <code>xappt</code></a></li>
+<li><a href="#saving-the-data">3.20. Saving the data</a></li>
+<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.21. Encrypting data files <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -38,7 +45,9 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>AddressBook Level 4 (AB4) is for those who <strong>prefer to use a desktop app for managing contacts</strong>. More importantly, AB4 is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, AB4 can get your contact management tasks done faster than traditional GUI apps. Interested? Jump to the <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started. Enjoy!</p>
+<p>Hospital Management System 2K18 is for hospital administrators, doctors, nurses, and pharmacists who prefer to use a desktop app to manage patients and their associated data.
+More importantly, Hospital Management System 2K18 is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI).
+If you can type fast, Hospital Management System 2K18 can get your hospital management tasks doen faster than traditional GUI apps.</p>
 </div>
 </div>
 </div>
@@ -48,49 +57,45 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Ensure you have Java version <code>9</code> or later installed in your Computer.</p>
+<p>Ensure that your computer has Java version <code>9</code> or later installed.</p>
 </li>
 <li>
-<p>Download the latest <code>addressbook.jar</code> <a href="https://github.com/se-edu/addressbook-level4/releases">here</a>.</p>
+<p>Download the latest release of our application, <code>hms2k18.jar</code> <a href="https://github.com/CS2103-AY1819S1-W14-3/main/releases">here</a>.</p>
 </li>
 <li>
-<p>Copy the file to the folder you want to use as the home folder for your Address Book.</p>
+<p>Copy the file to the folder you want to use as the home folder for your Hospital Management System 2K18.</p>
 </li>
 <li>
-<p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
+<p>Double-click the file to start the app. The Graphical User Interface (GUI) should appear in a few seconds.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/Ui.png" alt="Ui" width="790">
 </div>
+<div class="title">Figure 1. The GUI of Hospital Management System 2K18</div>
 </div>
 </li>
 <li>
 <p>Type the command in the command box and press <kbd>Enter</kbd> to execute it.<br>
-e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> will open the help window.</p>
+e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> will open the help window.
+(The command box is shown in Fig. 1 above; it is the gray box with the words "Enter your commands here&#8230;&#8203;" inside.)</p>
 </li>
-<li>
+</ol>
+</div>
+<div class="paragraph">
 <p>Some example commands you can try:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>list</code></strong> : lists all contacts</p>
-</li>
-<li>
-<p><strong><code>add</code></strong><code>n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code> : adds a contact named <code>John Doe</code> to the Address Book.</p>
-</li>
-<li>
-<p><strong><code>delete</code></strong><code>3</code> : deletes the 3rd contact shown in the current list</p>
-</li>
-<li>
 <p><strong><code>exit</code></strong> : exits the app</p>
+</li>
+<li>
+<p><strong><code>select 1</code></strong> : selects the first patient (Alex Yeoh in the image above) in the list of patients.</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Refer to <a href="#Features">Section 3, &#8220;Features&#8221;</a> for details of each command.</p>
-</li>
-</ol>
+<div class="paragraph">
+<p>Refer to <a href="#Features">Section 3, &#8220;Features&#8221;</a> for the details of each command.</p>
 </div>
 </div>
 </div>
@@ -120,18 +125,6 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></h3>
-<div class="paragraph">
-<p>Format: <code>help</code></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">3.2. Adding a person: <code>add</code></a></h3>
-<div class="paragraph">
-<p>Adds a person to the address book<br>
-Format: <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
-</div>
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -139,325 +132,543 @@ Format: <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;<
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-A person can have any number of tags (including 0)
+Features are sorted by their command word in lexicographical order.
 </td>
 </tr>
 </table>
 </div>
+<div class="sect2">
+<h3 id="add-appointment-for-patient-code-addappt-code"><a class="link" href="#add-appointment-for-patient-code-addappt-code">3.1. Add appointment for patient: <code>addappt</code></a></h3>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Add a scheduled appointment for a patient.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>addappt ic/NRIC type/TYPE pn/PROCEDURE_NAME dt/DD-MM-YYYY HHMM doc/DOCTOR-IN-CHARGE</code></p>
+</div>
+<div class="paragraph">
+<p>Example(s):</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code></p>
-</li>
-<li>
-<p><code>add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal</code></p>
+<p><code>addappt ic/S1234567A type/SRG pn/Heart Bypass dt/27-04-2019 1030 doc/Dr. Pepper</code></p>
 </li>
 </ul>
 </div>
-</div>
-<div class="sect2">
-<h3 id="listing-all-persons-code-list-code"><a class="link" href="#listing-all-persons-code-list-code">3.3. Listing all persons : <code>list</code></a></h3>
 <div class="paragraph">
-<p>Shows a list of all persons in the address book.<br>
-Format: <code>list</code></p>
+<p>The only valid types are <code>PROP</code> (PROPAEDEUTIC), <code>DIAG</code> (DIAGNOSTIC), <code>THP</code> (THERAPEUTIC), <code>SRG</code> (SURGICAL).
+<strong>Other inputs will not be allowed.</strong></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="editing-a-person-code-edit-code"><a class="link" href="#editing-a-person-code-edit-code">3.4. Editing a person : <code>edit</code></a></h3>
+<h3 id="add-patient-s-dietary-needs-code-adddiet-code"><a class="link" href="#add-patient-s-dietary-needs-code-adddiet-code">3.2. Add patient’s dietary needs: <code>adddiet</code></a></h3>
 <div class="paragraph">
-<p>Edits an existing person in the address book.<br>
-Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code></p>
+<p>Add a patient’s dietary needs into the system.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>adddiet ic/NRIC alg/ALLERGY1 alg/ALLERGY2 cr/CULTURAL_REQUIREMENT pd/PHYSICAL_DIFFICULTY</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Edits the person at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed person list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
-</li>
-<li>
-<p>At least one of the optional fields must be provided.</p>
-</li>
-<li>
-<p>Existing values will be updated to the input values.</p>
-</li>
-<li>
-<p>When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.</p>
-</li>
-<li>
-<p>You can remove all the person&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
+<p>User can pass in any number of allergies, cultural requirements and physical difficulties in one command.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Example(s):</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>edit 1 p/91234567 e/johndoe@example.com</code><br>
-Edits the phone number and email address of the 1st person to be <code>91234567</code> and <code>johndoe@example.com</code> respectively.</p>
-</li>
-<li>
-<p><code>edit 2 n/Betsy Crower t/</code><br>
-Edits the name of the 2nd person to be <code>Betsy Crower</code> and clears all existing tags.</p>
+<p><code>adddiet ic/S1234567A alg/Egg alg/Crab cr/Halal pd/Hands cannot move.</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="locating-persons-by-name-code-find-code"><a class="link" href="#locating-persons-by-name-code-find-code">3.5. Locating persons by name: <code>find</code></a></h3>
+<h3 id="add-patient-medication-code-addmeds-code"><a class="link" href="#add-patient-medication-code-addmeds-code">3.3. Add patient medication: <code>addmeds</code></a></h3>
 <div class="paragraph">
-<p>Finds persons whose names contain any of the given keywords.<br>
-Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
+<p>Add to a patient’s medication history.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>addmeds ic/NRIC d/DRUG_NAME q/QUANTITY_PER_DOSE u/DOSAGE_UNIT n/DOSES_PER_DAY t/DURATION_IN_DAYS</code></p>
+</div>
+<div class="paragraph">
+<p>Example(s):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>addmeds ic/S1234567A d/Paracetamol q/2 u/tablets n/4 t/14</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="add-to-patient-s-medical-history-code-addmh-code"><a class="link" href="#add-to-patient-s-medical-history-code-addmh-code">3.4. Add to patient’s medical history: <code>addmh</code></a></h3>
+<div class="paragraph">
+<p>Add an entry to an existing patient’s medical history.
+The patient must be registered within the system.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>addmh ic/NRIC mh/DIAGNOSIS​</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>The search is case insensitive. e.g <code>hans</code> will match <code>Hans</code></p>
-</li>
-<li>
-<p>The order of the keywords does not matter. e.g. <code>Hans Bo</code> will match <code>Bo Hans</code></p>
-</li>
-<li>
-<p>Only the name is searched.</p>
-</li>
-<li>
-<p>Only full words will be matched e.g. <code>Han</code> will not match <code>Hans</code></p>
-</li>
-<li>
-<p>Persons matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
+<p>If the NRIC does not match to an existing patient in the system, an error will be displayed.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Example(s):</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>find John</code><br>
-Returns <code>john</code> and <code>John Doe</code></p>
-</li>
-<li>
-<p><code>find Betsy Tim John</code><br>
-Returns any person having names <code>Betsy</code>, <code>Tim</code>, or <code>John</code></p>
+<p><code>addmh ic/S1234567A mh/Patient shows symptoms of flu. Prescribed 2 weeks of panadol, advised patient to
+rest and rehydrate.</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-person-code-delete-code"><a class="link" href="#deleting-a-person-code-delete-code">3.6. Deleting a person : <code>delete</code></a></h3>
+<h3 id="check-in-a-patient-code-checkin-code"><a class="link" href="#check-in-a-patient-code-checkin-code">3.5. Check-in a patient: <code>checkin</code></a></h3>
 <div class="paragraph">
-<p>Deletes the specified person from the address book.<br>
-Format: <code>delete INDEX</code></p>
+<p>Add a person to the patient queue.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>checkin ic/NRIC n/NAME p/PHONE_NUMBER a/ADDRESS d/DRUG_ALLERGIES</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If the patient is already checked in, the command will not be allowed.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example(s):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>checkin ic/S1234567A n/Ling Zhi Yu p/91234567 a/6 College Avenue East, #00-00, University Town, National University of Singapore, 138614 d/nil</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="check-out-a-patient-code-checkout-code"><a class="link" href="#check-out-a-patient-code-checkout-code">3.6. Check-out a patient: <code>checkout</code></a></h3>
+<div class="paragraph">
+<p>Remove a patient from the patient queue.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>checkout ic/NRIC</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Deletes the person at the specified <code>INDEX</code>.</p>
-</li>
-<li>
-<p>The index refers to the index number shown in the displayed person list.</p>
-</li>
-<li>
-<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+<p>If the NRIC does not match that of an existing patient in the system, an error will be displayed.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Example(s):</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>list</code><br>
-<code>delete 2</code><br>
-Deletes the 2nd person in the address book.</p>
-</li>
-<li>
-<p><code>find Betsy</code><br>
-<code>delete 1</code><br>
-Deletes the 1st person in the results of the <code>find</code> command.</p>
+<p><code>checkout ic/S1234567A</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="selecting-a-person-code-select-code"><a class="link" href="#selecting-a-person-code-select-code">3.7. Selecting a person : <code>select</code></a></h3>
+<h3 id="view-help-code-help-code"><a class="link" href="#view-help-code-help-code">3.7. View help : <code>help</code></a></h3>
 <div class="paragraph">
-<p>Selects the person identified by the index number used in the displayed person list.<br>
-Format: <code>select INDEX</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Selects the person and loads the Google search page the person at the specified <code>INDEX</code>.</p>
-</li>
-<li>
-<p>The index refers to the index number shown in the displayed person list.</p>
-</li>
-<li>
-<p>The index <strong>must be a positive integer</strong> <code>1, 2, 3, &#8230;&#8203;</code></p>
-</li>
-</ul>
-</div>
-</div>
+<p>Open this page.</p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list</code><br>
-<code>select 2</code><br>
-Selects the 2nd person in the address book.</p>
-</li>
-<li>
-<p><code>find Betsy</code><br>
-<code>select 1</code><br>
-Selects the 1st person in the results of the <code>find</code> command.</p>
-</li>
-</ul>
+<p>Format: <code>help</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">3.8. Listing entered commands : <code>history</code></a></h3>
+<h3 id="sort-user-view-code-sort-code"><a class="link" href="#sort-user-view-code-sort-code">3.8. Sort user view : <code>sort</code></a></h3>
 <div class="paragraph">
-<p>Lists all the commands that you have entered in reverse chronological order.<br>
-Format: <code>history</code></p>
+<p>Sort the current view, if it is sortable.</p>
 </div>
-<div class="admonitionblock note">
-<table>
+<div class="paragraph">
+<p>Format: <code>sort SORT_TYPE SORT_ORDER</code></p>
+</div>
+<div class="paragraph">
+<p><code>SORT_TYPE</code> refers to the order in which the sorting should be done (ascending, descending).
+It can be either 'a' for ascending, or 'd' for descending.</p>
+</div>
+<div class="paragraph">
+<p><code>SORT_ORDER</code> refers to the order in which the sorting should be done.
+How this affects the sorting exactly depends on each view, and will be explained in greater detail below.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
 <tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Pressing the <kbd>&uarr;</kbd> and <kbd>&darr;</kbd> arrows will display the previous and next input respectively in the command box.</p>
-</div>
-</td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sortable?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">What <code>SORT_ORDER</code> refers to</p></td>
 </tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.9. Undoing previous command : <code>undo</code></a></h3>
-<div class="paragraph">
-<p>Restores the address book to the state before the previous <em>undoable</em> command was executed.<br>
-Format: <code>undo</code></p>
-</div>
-<div class="admonitionblock note">
-<table>
 <tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Undoable commands: those commands that modify the address book&#8217;s content (<code>add</code>, <code>delete</code>, <code>edit</code> and <code>clear</code>).</p>
-</div>
-</td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medication</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The columns of the table in the medication view, one-indexed.</p></td>
+</tr>
+</tbody>
 </table>
-</div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Example(s):</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>delete 1</code><br>
-<code>list</code><br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
+<p><code>sort a 123</code> where the current view is Medication</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Sorts the table in the medication view by the first column (Drug Name). Any entries with the same drug name will be further sorted by the second column (Dosage), with any entries with the same drug name and dosage being further sorted by the third column (Dosage Unit).</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p><code>select 1</code><br>
-<code>list</code><br>
-<code>undo</code><br>
-The <code>undo</code> command fails as there are no undoable commands executed previously.</p>
-</li>
+<p><code>sort a 1</code> where the current view is the default view (blank view).</p>
+<div class="ulist">
+<ul>
 <li>
-<p><code>delete 1</code><br>
-<code>clear</code><br>
-<code>undo</code> (reverses the <code>clear</code> command)<br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
+<p>Does nothing (the current view is not sortable).</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">3.10. Redoing the previously undone command : <code>redo</code></a></h3>
+<h3 id="select-patient-code-select-code"><a class="link" href="#select-patient-code-select-code">3.9. Select patient: <code>select</code></a></h3>
 <div class="paragraph">
-<p>Reverses the most recent <code>undo</code> command.<br>
-Format: <code>redo</code></p>
+<p>Select a patient through pure command-line functionality.
+The alternative is to click on the patient&#8217;s card.</p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Format: <code>select INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>where INDEX refers to the index of the patient&#8217;s card (listed in the card)</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/highlightIndex.png" alt="highlightIndex" width="800">
+</div>
+<div class="title">Figure 2. Indication of the location of the index on the patient&#8217;s card</div>
+</div>
+<div class="paragraph">
+<p>Example(s):</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>delete 1</code><br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>delete 1</code> command)<br></p>
-</li>
-<li>
-<p><code>delete 1</code><br>
-<code>redo</code><br>
-The <code>redo</code> command fails as there are no <code>undo</code> commands executed previously.</p>
-</li>
-<li>
-<p><code>delete 1</code><br>
-<code>clear</code><br>
-<code>undo</code> (reverses the <code>clear</code> command)<br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>clear</code> command)<br></p>
+<p><code>select 1</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.11. Clearing all entries : <code>clear</code></a></h3>
+<h3 id="view-command"><a class="link" href="#view-command">3.10. View patient’s information: <code>view</code></a></h3>
 <div class="paragraph">
-<p>Clears all entries from the address book.<br>
-Format: <code>clear</code></p>
+<p>View a patient’s information. Exactly what information is displayed depends on the choice of view.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>view VIEW_NAME</code></p>
+</div>
+<div class="paragraph">
+<p>This command switches the user&#8217;s view (indicated in Fig. 2 below) to a chosen view.<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/highlightUserViewLocation.png" alt="highlightUserViewLocation" width="800">
+</div>
+<div class="title">Figure 3. Indication of the location of the user view</div>
+</div>
+<div class="paragraph">
+<p>Current choices for views include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>default (This is the default blank view, which is displayed when the application is started.)</p>
+</li>
+<li>
+<p>meds (Medication view, contains information about the patient&#8217;s medications.)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Listed below are images of each view.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/blankPanel.png" alt="blankPanel" width="800">
+</div>
+<div class="title">Figure 4. Default view</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/medsView.png" alt="medsView" width="800">
+</div>
+<div class="title">Figure 5. Medication view</div>
+</div>
+<div class="paragraph">
+<p>Example(s):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>view default</code></p>
+</li>
+<li>
+<p><code>view meds</code></p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.12. Exiting the program : <code>exit</code></a></h3>
+<h3 id="view-all-appointments-for-a-patient-code-viewappt-code"><a class="link" href="#view-all-appointments-for-a-patient-code-viewappt-code">3.11. View all appointments for a patient: <code>viewappt</code></a></h3>
 <div class="paragraph">
-<p>Exits the program.<br>
-Format: <code>exit</code></p>
+<p>View all scheduled appointments for a patient.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>viewappt ic/NRIC</code></p>
+</div>
+<div class="paragraph">
+<p>Example(s):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>viewappt ic/S1234567A</code></p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.13. Saving the data</a></h3>
+<h3 id="view-patient-s-dietary-needs-code-viewdiet-code"><a class="link" href="#view-patient-s-dietary-needs-code-viewdiet-code">3.12. View patient’s dietary needs: <code>viewdiet</code></a></h3>
 <div class="paragraph">
-<p>Address book data are saved in the hard disk automatically after any command that changes the data.<br>
+<p>View a patient’s dietary needs.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>viewdiet ic/NRIC</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>If the NRIC does not match to an existing patient in the system, an error will be displayed.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>​Example(s):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>viewdiet ic/S1234567A</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="view-patient-medication-code-view-meds-code"><a class="link" href="#view-patient-medication-code-view-meds-code">3.13. View patient medication: <code>view meds</code></a></h3>
+<div class="paragraph">
+<p>See <a href="#view-command">entry</a> on the <code>view</code> command.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="view-patient-s-medical-history-code-viewmh-code"><a class="link" href="#view-patient-s-medical-history-code-viewmh-code">3.14. View patient’s medical history: <code>viewmh</code></a></h3>
+<div class="paragraph">
+<p>View an existing patient’s recorded medical history.
+The patient must be registered within the system.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>viewmh ic/NRIC</code>​</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>If the NRIC does not match that of an existing patient in the system, an error will be displayed.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Example(s):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>viewmh ic/S1234567A</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="view-patient-queue-code-viewqueue-code"><a class="link" href="#view-patient-queue-code-viewqueue-code">3.15. View patient queue: <code>viewqueue</code></a></h3>
+<div class="paragraph">
+<p>View the current patient queue.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>viewqueue</code></p>
+</div>
+<div class="paragraph">
+<p>Example(s):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>viewqueue</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="view-patient-s-visitors-code-viewvisitors-code"><a class="link" href="#view-patient-s-visitors-code-viewvisitors-code">3.16. View patient’s visitors: <code>viewvisitors</code></a></h3>
+<div class="paragraph">
+<p>View a patient’s visitors.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>viewvisitors ic/PATIENT_NRIC</code></p>
+</div>
+<div class="paragraph">
+<p>Example(s):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>viewvisitors ic/S1234567A</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/viewvisitors_screenshot.png" alt="viewvisitors screenshot" width="800">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sign-in-patient-s-visitors-code-visitorin-code"><a class="link" href="#sign-in-patient-s-visitors-code-visitorin-code">3.17. Sign in patient’s visitors: <code>visitorin</code></a></h3>
+<div class="paragraph">
+<p>Sign in a visitor for a patient.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>visitorin ic/PATIENT_NRIC v/VISITOR_NAME</code></p>
+</div>
+<div class="paragraph">
+<p>Example(s):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>visitorin ic/S1234567A v/Amy</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/visitorin_screenshot.png" alt="visitorin screenshot" width="800">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sign-out-patient-s-visitors-code-visitorout-code"><a class="link" href="#sign-out-patient-s-visitors-code-visitorout-code">3.18. Sign out patient’s visitors: <code>visitorout</code></a></h3>
+<div class="paragraph">
+<p>Sign out a visitor for a patient.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>visitorout ic/PATIENT_NRIC v/VISITOR_NAME</code></p>
+</div>
+<div class="paragraph">
+<p>Example(s):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>visitorout ic/S1234567A v/Amy</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/visitorout_screenshot.png" alt="visitorout screenshot" width="800">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cancel-appointment-for-patient-code-xappt-code"><a class="link" href="#cancel-appointment-for-patient-code-xappt-code">3.19. Cancel appointment for patient: <code>xappt</code></a></h3>
+<div class="paragraph">
+<p>Cancels a scheduled appointment for a patient.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>xappt INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>Example(s):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>viewappt S1234567A</code><br>
+<code>xappt 2</code><br>
+Deletes the second appointment belonging to patient with NRIC S1234567A.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.20. Saving the data</a></h3>
+<div class="paragraph">
+<p>Patient data is saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.14. Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.21. Encrypting data files <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{explain how the user can enable/disable data encryption}</em></p>
 </div>
@@ -468,55 +679,255 @@ There is no need to save manually.</p>
 <h2 id="faq"><a class="link" href="#faq">4. FAQ</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
-<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.</p>
+<p><strong>Q</strong>: How do I transfer my data to another computer?<br>
+<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous app folder.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="command-summary"><a class="link" href="#command-summary">5. Command Summary</a></h2>
 <div class="sectionbody">
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>Each command below will be summarised in the following format:</p>
+</div>
+<div class="paragraph">
+<p><strong>Command name</strong></p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Add</strong> <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague</code></p>
+<p>Command format</p>
 </li>
 <li>
-<p><strong>Clear</strong> : <code>clear</code></p>
-</li>
-<li>
-<p><strong>Delete</strong> : <code>delete INDEX</code><br>
-e.g. <code>delete 3</code></p>
-</li>
-<li>
-<p><strong>Edit</strong> : <code>edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>edit 2 n/James Lee e/jameslee@example.com</code></p>
-</li>
-<li>
-<p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code><br>
-e.g. <code>find James Jake</code></p>
-</li>
-<li>
-<p><strong>List</strong> : <code>list</code></p>
-</li>
-<li>
-<p><strong>Help</strong> : <code>help</code></p>
-</li>
-<li>
-<p><strong>Select</strong> : <code>select INDEX</code><br>
-e.g.<code>select 2</code></p>
-</li>
-<li>
-<p><strong>History</strong> : <code>history</code></p>
-</li>
-<li>
-<p><strong>Undo</strong> : <code>undo</code></p>
-</li>
-<li>
-<p><strong>Redo</strong> : <code>redo</code></p>
+<p>Example(s) of use</p>
 </li>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-09-11 09:48:20 UTC</div></div></div></body></html>
+</div>
+<div class="paragraph">
+<p><strong>addappt</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>addappt ic/NRIC type/TYPE pn/PROCEDURE_NAME dt/DD-MM-YYYY HHMM doc/DOCTOR-IN-CHARGE</code></p>
+</li>
+<li>
+<p><code>addappt ic/S1234567A type/SRG pn/Heart Bypass dt/27-04-2019 1030 doc/Dr. Pepper</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>adddiet</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>adddiet ic/NRIC alg/ALLERGY1 alg/ALLERGY2 cr/CULTURAL_REQUIREMENT pd/PHYSICAL_DIFFICULTY</code></p>
+</li>
+<li>
+<p><code>adddiet ic/S1234567A alg/Egg alg/Crab cr/Halal pd/Hands cannot move.</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>addmeds</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>addmeds ic/NRIC d/DRUG_NAME q/QUANTITY_PER_DOSE u/DOSAGE_UNIT n/DOSES_PER_DAY t/DURATION_IN_DAYS</code></p>
+</li>
+<li>
+<p><code>addmeds ic/S1234567A d/Paracetamol q/2 u/tablets n/4 t/14</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>addmh</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>addmh ic/NRIC mh/DIAGNOSIS​</code></p>
+</li>
+<li>
+<p><code>addmh ic/S1234567A mh/Patient shows symptoms of flu. Prescribed 2 weeks of panadol, advised patient to rest and rehydrate.</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>checkin</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>checkin ic/NRIC n/NAME p/PHONE_NUMBER a/ADDRESS d/DRUG_ALLERGIES</code></p>
+</li>
+<li>
+<p><code>checkin ic/S1234567A n/Ling Zhi Yu p/91234567 a/6 College Avenue East, #00-00, University Town, National University of Singapore, 138614 d/nil</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>checkout</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>checkout ic/NRIC</code></p>
+</li>
+<li>
+<p><code>checkout ic/S1234567A</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>help</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>help</code></p>
+</li>
+<li>
+<p><code>help</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>sort</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>sort SORT_TYPE SORT_ORDER</code></p>
+</li>
+<li>
+<p><code>sort a 123</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>view</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>view VIEW_NAME</code></p>
+</li>
+<li>
+<p><code>view default</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>viewappt</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>viewappt ic/NRIC</code></p>
+</li>
+<li>
+<p><code>viewappt ic/S1234567A</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>viewdiet</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>viewdiet ic/NRIC</code></p>
+</li>
+<li>
+<p><code>viewdiet ic/S1234567A</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>viewmh</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>viewmh ic/NRIC</code></p>
+</li>
+<li>
+<p><code>viewmh ic/S1234567A</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>viewqueue</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>viewqueue</code></p>
+</li>
+<li>
+<p><code>viewqueue</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>viewvisitors</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>viewvisitors ic/PATIENT_NRIC</code></p>
+</li>
+<li>
+<p><code>viewvisitors ic/S1234567A</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>visitorin</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>visitorin ic/PATIENT_NRIC v/VISITOR_NAME</code></p>
+</li>
+<li>
+<p><code>visitorin ic/S1234567A v/Sara Ann Nicholas</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>visitorout</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>visitorout ic/PATIENT_NRIC v/VISITOR_NAME</code></p>
+</li>
+<li>
+<p><code>visitorout ic/S1234567A v/Sara Ann Nicholas</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>xappt</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>xappt INDEX</code></p>
+</li>
+<li>
+<p><code>viewappt S1234567A</code><br>
+<code>xappt 2</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-10 08:59:25 UTC</div></div></div></body></html>
