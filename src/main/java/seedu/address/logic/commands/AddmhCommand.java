@@ -32,15 +32,15 @@ public class AddmhCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a patients's medical history. "
             + "Parameters: "
             + PREFIX_NRIC + "NRIC "
-            + PREFIX_MED_HISTORY + "DIAGNOSIS/REMARK"
+            + PREFIX_MED_HISTORY + "DIAGNOSIS/REMARK "
             + PREFIX_DOCTOR + "DOCTOR\n"
             + "Example: " + COMMAND_WORD + " "
-            + PREFIX_NRIC + "S9271847A"
-            + PREFIX_MED_HISTORY + "Patient has acute terminal stage brain cancer, refer to Dr.Zhang immediately."
+            + PREFIX_NRIC + "S1234567A "
+            + PREFIX_MED_HISTORY + "Patient has acute terminal stage brain cancer, refer to Dr.Zhang immediately. "
             + PREFIX_DOCTOR + "Dr.Ross";
 
     public static final String MESSAGE_SUCCESS = "New medical history/record successfully added: %1$s";
-    public static final String MESSAGE_UNREGISTERED = "Patient %1$s is not registered within the system.";
+    public static final String MESSAGE_UNREGISTERED = "Patient is not registered within the system.";
 
     private final Nric patientNric;
     private final Diagnosis newRecord;
@@ -67,12 +67,11 @@ public class AddmhCommand extends Command {
         return new CommandResult(String.format(MESSAGE_SUCCESS, patientNric));
     }
 
-    // todo refactor, multiple usages in other command methods as well. consider in future
     /**
      * Getter method to get the patient.
      *
-     * @param model the model used that stores the data of HMK2K18
-     * @return the `Person` with the matching NRIC
+     * @param model the model used that stores the data of HealthBase
+     * @return the {@code Person} with the matching NRIC
      * @throws CommandException if there is no person in the `model` that matches the person's NRIC.
      */
     private Person getPatient(Model model) throws CommandException {
