@@ -1,5 +1,7 @@
 package seedu.address.model.diet;
 
+//@@author yuntongzhang
+
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -9,8 +11,6 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import seedu.address.testutil.Assert;
-
-//@@author yuntongzhang
 
 /**
  * Test driver class for Diet POJO class functionality.
@@ -30,7 +30,7 @@ public class DietTest {
         allergyOne = "Egg";
         allergyTwo = "Milk";
         culturalRequirement = "Halal";
-        physicalDifficulty = "Hands cannot move.";
+        physicalDifficulty = "Hands cannot move";
     }
 
     @Test
