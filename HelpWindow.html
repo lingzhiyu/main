@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Hospital Management System 2K18 - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>HealthBase - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="header"><h1>Hospital Management System 2K18 - User Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="header"><h1>HealthBase - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>Team W14-3</code>      Since: <code>September 2018</code>      Licence: <code>MIT</code></p>
@@ -17,21 +17,21 @@
 <li><a href="#add-patient-s-dietary-needs-code-adddiet-code">3.2. Add patient’s dietary needs: <code>adddiet</code></a></li>
 <li><a href="#add-patient-medication-code-addmeds-code">3.3. Add patient medication: <code>addmeds</code></a></li>
 <li><a href="#add-to-patient-s-medical-history-code-addmh-code">3.4. Add to patient’s medical history: <code>addmh</code></a></li>
-<li><a href="#check-in-a-patient-code-checkin-code">3.5. Check-in a patient: <code>checkin</code></a></li>
-<li><a href="#check-out-a-patient-code-checkout-code">3.6. Check-out a patient: <code>checkout</code></a></li>
+<li><a href="#check-in-a-returning-patient-code-checkin-code">3.5. Check in a returning patient: <code>checkin</code></a></li>
+<li><a href="#check-out-a-patient-code-checkout-code">3.6. Check out a patient: <code>checkout</code></a></li>
 <li><a href="#view-help-code-help-code">3.7. View help : <code>help</code></a></li>
-<li><a href="#sort-user-view-code-sort-code">3.8. Sort user view : <code>sort</code></a></li>
-<li><a href="#select-patient-code-select-code">3.9. Select patient: <code>select</code></a></li>
-<li><a href="#view-command">3.10. View patient’s information: <code>view</code></a></li>
-<li><a href="#view-all-appointments-for-a-patient-code-viewappt-code">3.11. View all appointments for a patient: <code>viewappt</code></a></li>
-<li><a href="#view-patient-s-dietary-needs-code-viewdiet-code">3.12. View patient’s dietary needs: <code>viewdiet</code></a></li>
-<li><a href="#view-patient-medication-code-view-meds-code">3.13. View patient medication: <code>view meds</code></a></li>
-<li><a href="#view-patient-s-medical-history-code-viewmh-code">3.14. View patient’s medical history: <code>viewmh</code></a></li>
-<li><a href="#view-patient-queue-code-viewqueue-code">3.15. View patient queue: <code>viewqueue</code></a></li>
-<li><a href="#view-patient-s-visitors-code-viewvisitors-code">3.16. View patient’s visitors: <code>viewvisitors</code></a></li>
-<li><a href="#sign-in-patient-s-visitors-code-visitorin-code">3.17. Sign in patient’s visitors: <code>visitorin</code></a></li>
-<li><a href="#sign-out-patient-s-visitors-code-visitorout-code">3.18. Sign out patient’s visitors: <code>visitorout</code></a></li>
-<li><a href="#cancel-appointment-for-patient-code-xappt-code">3.19. Cancel appointment for patient: <code>xappt</code></a></li>
+<li><a href="#register-a-new-patient-to-the-system-code-register-code">3.8. Register a new patient to the system: <code>register</code></a></li>
+<li><a href="#sort-user-view-code-sort-code">3.9. Sort user view : <code>sort</code></a></li>
+<li><a href="#select-command">3.10. Select patient: <code>select</code></a></li>
+<li><a href="#view-command">3.11. View patient’s information: <code>view</code></a></li>
+<li><a href="#view-all-appointments-for-a-patient-code-view-appt-code">3.12. View all appointments for a patient: <code>view appt</code></a></li>
+<li><a href="#view-patient-s-dietary-requirements-code-view-diets-code">3.13. View patient’s dietary requirements: <code>view diets</code></a></li>
+<li><a href="#view-patient-medication-code-view-meds-code">3.14. View patient medication: <code>view meds</code></a></li>
+<li><a href="#view-patient-visitors-code-view-visitors-code">3.15. View patient visitors: <code>view visitors</code></a></li>
+<li><a href="#view-patient-s-medical-history-code-view-mh-code">3.16. View patient’s medical history: <code>view mh</code></a></li>
+<li><a href="#view-patient-s-visitors-code-viewvisitors-code">3.17. View patient’s visitors: <code>viewvisitors</code></a></li>
+<li><a href="#sign-in-patient-s-visitors-code-visitorin-code">3.18. Sign in patient’s visitors: <code>visitorin</code></a></li>
+<li><a href="#sign-out-patient-s-visitors-code-visitorout-code">3.19. Sign out patient’s visitors: <code>visitorout</code></a></li>
 <li><a href="#saving-the-data">3.20. Saving the data</a></li>
 <li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.21. Encrypting data files <code>[coming in v2.0]</code></a></li>
 </ul>
@@ -45,9 +45,9 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Hospital Management System 2K18 is for hospital administrators, doctors, nurses, and pharmacists who prefer to use a desktop app to manage patients and their associated data.
-More importantly, Hospital Management System 2K18 is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI).
-If you can type fast, Hospital Management System 2K18 can get your hospital management tasks doen faster than traditional GUI apps.</p>
+<p>HealthBase is for hospital administrators, doctors, nurses, and pharmacists who prefer to use a desktop app to manage patients and their associated data.
+More importantly, HealthBase is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI).
+If you can type fast, HealthBase can get your hospital management tasks done faster than traditional GUI apps.</p>
 </div>
 </div>
 </div>
@@ -60,18 +60,18 @@ If you can type fast, Hospital Management System 2K18 can get your hospital mana
 <p>Ensure that your computer has Java version <code>9</code> or later installed.</p>
 </li>
 <li>
-<p>Download the latest release of our application, <code>hms2k18.jar</code> <a href="https://github.com/CS2103-AY1819S1-W14-3/main/releases">here</a>.</p>
+<p>Download the latest release of our application, <code>healthbase.jar</code> <a href="https://github.com/CS2103-AY1819S1-W14-3/main/releases">here</a>.</p>
 </li>
 <li>
-<p>Copy the file to the folder you want to use as the home folder for your Hospital Management System 2K18.</p>
+<p>Copy the file to the folder you want to use as the home folder for your HealthBase.</p>
 </li>
 <li>
 <p>Double-click the file to start the app. The Graphical User Interface (GUI) should appear in a few seconds.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/Ui.png" alt="Ui" width="790">
+<img src="images/Ui.png" alt="Ui" width="1000">
 </div>
-<div class="title">Figure 1. The GUI of Hospital Management System 2K18</div>
+<div class="title">Figure 1. The GUI of HealthBase</div>
 </div>
 </li>
 <li>
@@ -113,10 +113,10 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add n/John Doe</code>.</p>
 </li>
 <li>
-<p>Items in square brackets are optional e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/John Doe t/friend</code> or as <code>n/John Doe</code>.</p>
+<p>Items in square brackets are optional e.g <code>n/NAME [da/DRUG ALLERGY]</code> can be used as <code>da/aspirin da/insulin</code> or as <code>n/John Doe</code>.</p>
 </li>
 <li>
-<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/friend</code>, <code>t/friend t/family</code> etc.</p>
+<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[da/DRUG ALLERGY]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>da/aspirin</code>, <code>da/aspirin da/insulin</code> etc.</p>
 </li>
 <li>
 <p>Parameters can be in any order e.g. if the command specifies <code>n/NAME p/PHONE_NUMBER</code>, <code>p/PHONE_NUMBER n/NAME</code> is also acceptable.</p>
@@ -143,7 +143,46 @@ Features are sorted by their command word in lexicographical order.
 <p>Add a scheduled appointment for a patient.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>addappt ic/NRIC type/TYPE pn/PROCEDURE_NAME dt/DD-MM-YYYY HHMM doc/DOCTOR-IN-CHARGE</code></p>
+<p>Format: <code>addappt ic/NRIC type/TYPE pn/PROCEDURE_NAME dt/DD-MM-YYYY HH:MM doc/DOCTOR-IN-CHARGE</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The only valid types are <code>PROP</code> (PROPAEDEUTIC), <code>DIAG</code> (DIAGNOSTIC), <code>THP</code> (THERAPEUTIC), <code>SRG</code> (SURGICAL).
+<strong>Other inputs are not allowed.</strong>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+It is useful to note that HealthBase does not permit appointments of duplicate date and time for any one patient. This is
+to prevent appointment clashes.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+The HealthBase System assumes that there are <code>31</code> days for all months. For the inputs of the dates <code>31</code> and <code>29</code> (for February), it is the onus of the user to ensure that
+the input month has <code>31</code> days (for months except February) and <code>29</code> days for February in a leap year.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Example(s):</p>
@@ -151,31 +190,161 @@ Features are sorted by their command word in lexicographical order.
 <div class="ulist">
 <ul>
 <li>
-<p><code>addappt ic/S1234567A type/SRG pn/Heart Bypass dt/27-04-2019 1030 doc/Dr. Pepper</code></p>
+<p><code>addappt ic/S1234567A type/SRG pn/Heart Bypass dt/27-04-2019 10:30 doc/Dr. Pepper</code></p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>The only valid types are <code>PROP</code> (PROPAEDEUTIC), <code>DIAG</code> (DIAGNOSTIC), <code>THP</code> (THERAPEUTIC), <code>SRG</code> (SURGICAL).
-<strong>Other inputs will not be allowed.</strong></p>
+<div id="img-addapptcommand" class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Type the example command into the input box as shown in the figure below and hit the <kbd>Enter</kbd> key:</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/addapptcommand.png" alt="addapptcommand" width="1000">
+</div>
+<div class="title">Figure 2. Adding an appointment for patient</div>
+</div>
+<div id="img-addapptresult" class="olist arabic">
+<ol class="arabic" start="2">
+<li>
+<p>The resulting output will be as shown in the figure below:</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/addapptresult.png" alt="addapptresult" width="1000">
+</div>
+<div class="title">Figure 3. Appointment has been added</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you want to view the newly added appointments for a particular patient, simply enter <code>view appt</code>.
+You may have to enter select <code>&lt;patient index&gt;</code> or click on the patient panel card.
+To use the full capabilities of the <code>view</code> command, click <a href="#view-command">here</a>.
+</td>
+</tr>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="add-patient-s-dietary-needs-code-adddiet-code"><a class="link" href="#add-patient-s-dietary-needs-code-adddiet-code">3.2. Add patient’s dietary needs: <code>adddiet</code></a></h3>
 <div class="paragraph">
-<p>Add a patient’s dietary needs into the system.</p>
+<p>Add a patient’s dietary requirements into the system.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>adddiet ic/NRIC alg/ALLERGY1 alg/ALLERGY2 cr/CULTURAL_REQUIREMENT pd/PHYSICAL_DIFFICULTY</code></p>
 </div>
+<div class="paragraph">
+<p>There are three types of dietary requirements, which can be added to a patient with their own prefixes:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type of dietary requirement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prefix</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Usage Example</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allergy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>alg</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>alg/Egg</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cultural Requirement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cr</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cr/Halal</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Physical Difficulty</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pd</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pd/Hands cannot move</code></p></td>
+</tr>
+</tbody>
+</table>
 <div class="sidebarblock">
 <div class="content">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The number of dietary requirements in an <code>adddiet</code> command must adhere to the following rules:
+</td>
+</tr>
+</table>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>User can pass in any number of allergies, cultural requirements and physical difficulties in one command.</p>
+<p>All three types are optional to be included, but there must be at least one dietary requirement in the command.</p>
+</li>
+<li>
+<p>For each type, more than one requirements can be specified in the command.</p>
 </li>
 </ul>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+The following inputs are considered as invalid when entering a dietary requirement:
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Input with non-alphabetical characters. Eg. <code>alg/1Egg</code></p>
+</li>
+<li>
+<p>Input with only empty whitespaces or blank input. Eg. <code>cr/        pd/</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Adding two same dietary requirements to a patient will only result in one copy of the requirements being saved to
+the patient.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -185,9 +354,21 @@ Features are sorted by their command word in lexicographical order.
 <div class="ulist">
 <ul>
 <li>
-<p><code>adddiet ic/S1234567A alg/Egg alg/Crab cr/Halal pd/Hands cannot move.</code></p>
+<p><code>adddiet ic/S1234567A alg/Egg alg/Crab cr/Halal pd/Hands cannot move</code></p>
+</li>
+<li>
+<p><code>adddiet ic/S1234567A cr/Vegetarian</code></p>
 </li>
 </ul>
+</div>
+<div id="img-adddietcommand" class="paragraph">
+<p>Result of executing the first example command above:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/adddietcommand.png" alt="adddietcommand" width="1000">
+</div>
+<div class="title">Figure 4. Adding dietary requirements for a patient</div>
 </div>
 </div>
 <div class="sect2">
@@ -212,22 +393,12 @@ Features are sorted by their command word in lexicographical order.
 <div class="sect2">
 <h3 id="add-to-patient-s-medical-history-code-addmh-code"><a class="link" href="#add-to-patient-s-medical-history-code-addmh-code">3.4. Add to patient’s medical history: <code>addmh</code></a></h3>
 <div class="paragraph">
-<p>Add an entry to an existing patient’s medical history.
-The patient must be registered within the system.</p>
+<p>Add a non-blank diagnosis entry with the name of the doctor-in-charge to an existing patient’s medical history.
+The patient must be registered within the system and the doctor&#8217;s name should contain his title which is followed by his full name.
+For all words in the doctor&#8217;s name, the starting letter must be capitalised.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>addmh ic/NRIC mh/DIAGNOSIS​</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>If the NRIC does not match to an existing patient in the system, an error will be displayed.</p>
-</li>
-</ul>
-</div>
-</div>
+<p>Format: <code>addmh ic/NRIC mh/DIAGNOSIS​ doc/DOCTOR-IN-CHARGE</code></p>
 </div>
 <div class="paragraph">
 <p>Example(s):</p>
@@ -236,25 +407,166 @@ The patient must be registered within the system.</p>
 <ul>
 <li>
 <p><code>addmh ic/S1234567A mh/Patient shows symptoms of flu. Prescribed 2 weeks of panadol, advised patient to
-rest and rehydrate.</code></p>
+rest and rehydrate. doc/Dr. Zhang De</code></p>
+</li>
+<li>
+<p><code>addmh ic/T9876543Z mh/Patient appears to have chronic cough. Referred to specialist. doc/Dr.Timothy</code></p>
 </li>
 </ul>
 </div>
-</div>
-<div class="sect2">
-<h3 id="check-in-a-patient-code-checkin-code"><a class="link" href="#check-in-a-patient-code-checkin-code">3.5. Check-in a patient: <code>checkin</code></a></h3>
 <div class="paragraph">
-<p>Add a person to the patient queue.</p>
+<p>To try out the <code>addmh</code> command:</p>
 </div>
-<div class="paragraph">
-<p>Format: <code>checkin ic/NRIC n/NAME p/PHONE_NUMBER a/ADDRESS d/DRUG_ALLERGIES</code></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Type out a valid <code>addmh</code> command which follows the stated format into the command box.
+Such an example can be seen in the figure below.</p>
+</li>
+<li>
+<p>Submit the input into HealthBase by pressing <kbd>Enter</kbd>.
+The result display panel will show a successful <code>addmh</code> command message, and should show the further figure below.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/beforeAddmhCommand.png" alt="beforeAddmhCommand" width="1000">
+</div>
+<div class="title">Figure 5. Command box and result display panel before entering an <code>addmh</code> command.</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/afterAddmhCommand.png" alt="afterAddmhCommand" width="1000">
+</div>
+<div class="title">Figure 6. Command box and result display panel after entering the valid <code>addmh</code> command.</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+The following invalid inputs will result in a command failure, and the display of an appropriate error message.
+</td>
+</tr>
+</table>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>If the patient is already checked in, the command will not be allowed.</p>
+<p>Invalid NRIC</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The patient NRIC does not match to an existing patient in the system. The person will first need to be registered.</p>
 </li>
 </ul>
+</div>
+</li>
+<li>
+<p>Incorrect format of the doctor&#8217;s name.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Doctor&#8217;s title must be included.</p>
+</li>
+<li>
+<p>The first letter of all words in doctor&#8217;s name must be captalised.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Blank diagnosis</p>
+<div class="ulist">
+<ul>
+<li>
+<p>An empty diagnosis will not be accepted as a valid diagnosis.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Missing prefixes</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Not all the prefixes in the stated command format have been included.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you want to view the newly added diagnoses to a particular patient, simply enter <code>view mh</code>.
+You may have to enter select &lt;patient index&gt;` or click on the patient panel card.
+To use the full capabilities of the <code>view</code> command, click <a href="#view-command">here</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="check-in-a-returning-patient-code-checkin-code"><a class="link" href="#check-in-a-returning-patient-code-checkin-code">3.5. Check in a returning patient: <code>checkin</code></a></h3>
+<div class="paragraph">
+<p>Check in a returning patient back to the HealthBase system, and retrieve his/her information from backend and display
+them in the left panel of the application window. The patient being checked in must have been previously registered
+to the system and were checked out of the system sometime before by using the <code>checkout</code> command.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>checkin ic/NRIC</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If there is no record of this patient in our system (which means that the patient with the specified <code>NRIC</code> has
+not visited the hospital and not been registered in the system, the application will direct the user to use the <code>register</code> command
+to register this new patient with his/her necessary information.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+If the patient with the specified <code>NRIC</code> is still active in the system (which means that the patient in the system has
+not been checked out yet), the command is considered as invalid.<br>
+The <code>checkin</code> command is only considered valid when the patient with the <code>NRIC</code> specified were checked out before
+by using the <code>checkout</code> command.
+</td>
+</tr>
+</table>
+</div>
+</div>
 </div>
 <div class="paragraph">
 <p>Example(s):</p>
@@ -262,27 +574,52 @@ rest and rehydrate.</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>checkin ic/S1234567A n/Ling Zhi Yu p/91234567 a/6 College Avenue East, #00-00, University Town, National University of Singapore, 138614 d/nil</code></p>
+<p><code>checkin ic/S1234567A</code><br>
+Note that the patient with <code>NRIC S1234567A</code> must have been previously registered to the system and were checked out of
+the system sometime before by using the <code>checkout</code> command.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="check-out-a-patient-code-checkout-code"><a class="link" href="#check-out-a-patient-code-checkout-code">3.6. Check-out a patient: <code>checkout</code></a></h3>
+<h3 id="check-out-a-patient-code-checkout-code"><a class="link" href="#check-out-a-patient-code-checkout-code">3.6. Check out a patient: <code>checkout</code></a></h3>
 <div class="paragraph">
-<p>Remove a patient from the patient queue.</p>
+<p>Check out a patient from the HealthBase system, while still keeping the information of the patient at the backend.
+Upon checking out a particular patient, this patient will not be displayed in the left panel of the application.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>checkout ic/NRIC</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>If the NRIC does not match that of an existing patient in the system, an error will be displayed.</p>
-</li>
-</ul>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+If the NRIC does not match that of any checked in patient in the system, an error message will be displayed.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+After a patient has been checked out from the system, all commands with the NRIC of this patient as parameter
+(except the <code>checkin</code> command) will be considered as invalid commands.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -307,7 +644,76 @@ rest and rehydrate.</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="sort-user-view-code-sort-code"><a class="link" href="#sort-user-view-code-sort-code">3.8. Sort user view : <code>sort</code></a></h3>
+<h3 id="register-a-new-patient-to-the-system-code-register-code"><a class="link" href="#register-a-new-patient-to-the-system-code-register-code">3.8. Register a new patient to the system: <code>register</code></a></h3>
+<div class="paragraph">
+<p>Register a new patient together with necessary information into the system.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>register ic/NRIC n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS da/DRUG_ALLERGIES</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the patient is already registered, the command will not be allowed.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+The prefix <code>da/</code> must be separated from the last input by a whitespace
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Example(s):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>register ic/S1234567A n/John Doe p/98765432 e/johnd@example.com a/311, Clementi Ave 2, #02-25 da/aspirin da/insulin</code></p>
+</li>
+</ul>
+</div>
+<div id="img-registercommand" class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Type the example command into the input box as shown in the figure below and hit the <kbd>Enter</kbd> key:</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/registercommand.png" alt="registercommand" width="1000">
+</div>
+<div class="title">Figure 7. Registering a new patient</div>
+</div>
+<div id="img-registerresult" class="olist arabic">
+<ol class="arabic" start="2">
+<li>
+<p>The resulting output will be as shown in the figure below:</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/registerresult.png" alt="registerresult" width="1000">
+</div>
+<div class="title">Figure 8. Patient has been registered</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sort-user-view-code-sort-code"><a class="link" href="#sort-user-view-code-sort-code">3.9. Sort user view : <code>sort</code></a></h3>
 <div class="paragraph">
 <p>Sort the current view, if it is sortable.</p>
 </div>
@@ -340,9 +746,24 @@ How this affects the sorting exactly depends on each view, and will be explained
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Apppointment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The columns of the table in the view, one-indexed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Diet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Medication</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The columns of the table in the medication view, one-indexed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The columns of the table in the view, one-indexed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medical History</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The columns of the table in the view, one-indexed.</p></td>
 </tr>
 </tbody>
 </table>
@@ -375,7 +796,7 @@ How this affects the sorting exactly depends on each view, and will be explained
 </div>
 </div>
 <div class="sect2">
-<h3 id="select-patient-code-select-code"><a class="link" href="#select-patient-code-select-code">3.9. Select patient: <code>select</code></a></h3>
+<h3 id="select-command"><a class="link" href="#select-command">3.10. Select patient: <code>select</code></a></h3>
 <div class="paragraph">
 <p>Select a patient through pure command-line functionality.
 The alternative is to click on the patient&#8217;s card.</p>
@@ -388,9 +809,9 @@ The alternative is to click on the patient&#8217;s card.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/highlightIndex.png" alt="highlightIndex" width="800">
+<img src="images/highlightIndex.png" alt="highlightIndex" width="1000">
 </div>
-<div class="title">Figure 2. Indication of the location of the index on the patient&#8217;s card</div>
+<div class="title">Figure 9. Indication of the location of the index on the patient&#8217;s card</div>
 </div>
 <div class="paragraph">
 <p>Example(s):</p>
@@ -404,21 +825,24 @@ The alternative is to click on the patient&#8217;s card.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="view-command"><a class="link" href="#view-command">3.10. View patient’s information: <code>view</code></a></h3>
+<h3 id="view-command"><a class="link" href="#view-command">3.11. View patient’s information: <code>view</code></a></h3>
 <div class="paragraph">
-<p>View a patient’s information. Exactly what information is displayed depends on the choice of view.</p>
+<p>View a selected patient’s information in the panel on the right. Exactly what information is displayed depends on the choice of view.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Selected here refers to the use of the <a href="#select-command"><code>select</code></a> command. To view the information of a given patient, he must first be <code>select</code> ed.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Format: <code>view VIEW_NAME</code></p>
-</div>
-<div class="paragraph">
-<p>This command switches the user&#8217;s view (indicated in Fig. 2 below) to a chosen view.<br></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/highlightUserViewLocation.png" alt="highlightUserViewLocation" width="800">
-</div>
-<div class="title">Figure 3. Indication of the location of the user view</div>
 </div>
 <div class="paragraph">
 <p>Current choices for views include:</p>
@@ -426,27 +850,33 @@ The alternative is to click on the patient&#8217;s card.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>default (This is the default blank view, which is displayed when the application is started.)</p>
+<p>default (This is the default blank view, which is displayed when the application is started)</p>
 </li>
 <li>
-<p>meds (Medication view, contains information about the patient&#8217;s medications.)</p>
+<p>appt (Appointment view, contains patient&#8217;s appointments)</p>
+</li>
+<li>
+<p>diets (Diet view, contains patient&#8217;s dietary requirements)</p>
+</li>
+<li>
+<p>meds (Medication view, contains information about the patient&#8217;s medications)</p>
+</li>
+<li>
+<p>mh (Medical history view, contains patient&#8217;s previous medical diagnoses)</p>
+</li>
+<li>
+<p>visitors (Visitor list view, contains patient&#8217;s visitors' names)</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Listed below are images of each view.</p>
+<p>This command switches the user&#8217;s view (right panel of the UI, indicated in the figure directly below) to a chosen view.<br></p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/blankPanel.png" alt="blankPanel" width="800">
+<img src="images/highlightUserViewLocation.png" alt="highlightUserViewLocation" width="1000">
 </div>
-<div class="title">Figure 4. Default view</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/medsView.png" alt="medsView" width="800">
-</div>
-<div class="title">Figure 5. Medication view</div>
+<div class="title">Figure 10. Indication of the location of the user view</div>
 </div>
 <div class="paragraph">
 <p>Example(s):</p>
@@ -456,86 +886,157 @@ The alternative is to click on the patient&#8217;s card.</p>
 <li>
 <p><code>view default</code></p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/blankPanel.png" alt="blankPanel" width="1000">
+</div>
+<div class="title">Figure 11. Default view</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>view appt</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/apptView.png" alt="apptView" width="1000">
+</div>
+<div class="title">Figure 12. Appointment view</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>view diets</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/dietView.png" alt="dietView" width="1000">
+</div>
+<div class="title">Figure 13. Diet view</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p><code>view meds</code></p>
 </li>
 </ul>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/medsView.png" alt="medsView" width="1000">
 </div>
-<div class="sect2">
-<h3 id="view-all-appointments-for-a-patient-code-viewappt-code"><a class="link" href="#view-all-appointments-for-a-patient-code-viewappt-code">3.11. View all appointments for a patient: <code>viewappt</code></a></h3>
-<div class="paragraph">
-<p>View all scheduled appointments for a patient.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>viewappt ic/NRIC</code></p>
-</div>
-<div class="paragraph">
-<p>Example(s):</p>
+<div class="title">Figure 14. Medication view</div>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>viewappt ic/S1234567A</code></p>
+<p><code>view mh</code></p>
 </li>
 </ul>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/mhView.png" alt="mhView" width="1000">
 </div>
-<div class="sect2">
-<h3 id="view-patient-s-dietary-needs-code-viewdiet-code"><a class="link" href="#view-patient-s-dietary-needs-code-viewdiet-code">3.12. View patient’s dietary needs: <code>viewdiet</code></a></h3>
-<div class="paragraph">
-<p>View a patient’s dietary needs.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>viewdiet ic/NRIC</code></p>
+<div class="title">Figure 15. Medical history view</div>
 </div>
 <div class="sidebarblock">
 <div class="content">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+When a user clears all the stored entries with the <code>clear</code> command,
+the view panels of the last selected person (if any) are still accessible via the <code>view</code> command.
+</td>
+</tr>
+</table>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>If the NRIC does not match to an existing patient in the system, an error will be displayed.</p>
+<p>For example, the following <code>view</code> commands will function fine for the last selected person.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>view default</code></p>
+</li>
+<li>
+<p><code>view meds</code></p>
+</li>
+<li>
+<p><code>view appt</code></p>
+</li>
+<li>
+<p><code>view mh</code></p>
+</li>
+<li>
+<p><code>view diet</code></p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
 </div>
 </div>
-<div class="paragraph">
-<p>​Example(s):</p>
-</div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>viewdiet ic/S1234567A</code></p>
+<p><code>view visitors</code></p>
 </li>
 </ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/visitorsView.png" alt="visitorsView" width="800">
+</div>
+<div class="title">Figure 16. Visitor view</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="view-patient-medication-code-view-meds-code"><a class="link" href="#view-patient-medication-code-view-meds-code">3.13. View patient medication: <code>view meds</code></a></h3>
+<h3 id="view-all-appointments-for-a-patient-code-view-appt-code"><a class="link" href="#view-all-appointments-for-a-patient-code-view-appt-code">3.12. View all appointments for a patient: <code>view appt</code></a></h3>
 <div class="paragraph">
 <p>See <a href="#view-command">entry</a> on the <code>view</code> command.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="view-patient-s-medical-history-code-viewmh-code"><a class="link" href="#view-patient-s-medical-history-code-viewmh-code">3.14. View patient’s medical history: <code>viewmh</code></a></h3>
+<h3 id="view-patient-s-dietary-requirements-code-view-diets-code"><a class="link" href="#view-patient-s-dietary-requirements-code-view-diets-code">3.13. View patient’s dietary requirements: <code>view diets</code></a></h3>
 <div class="paragraph">
-<p>View an existing patient’s recorded medical history.
-The patient must be registered within the system.</p>
+<p>View an existing patient&#8217;s recorded dietary requirements.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>viewmh ic/NRIC</code>​</p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>If the NRIC does not match that of an existing patient in the system, an error will be displayed.</p>
-</li>
-</ul>
+<p>See <a href="#view-command">entry</a> on the <code>view</code> command.</p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="view-patient-medication-code-view-meds-code"><a class="link" href="#view-patient-medication-code-view-meds-code">3.14. View patient medication: <code>view meds</code></a></h3>
+<div class="paragraph">
+<p>See <a href="#view-command">entry</a> on the <code>view</code> command.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="view-patient-visitors-code-view-visitors-code"><a class="link" href="#view-patient-visitors-code-view-visitors-code">3.15. View patient visitors: <code>view visitors</code></a></h3>
+<div class="paragraph">
+<p>See <a href="#view-command">entry</a> on the <code>view</code> command.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="view-patient-s-medical-history-code-view-mh-code"><a class="link" href="#view-patient-s-medical-history-code-view-mh-code">3.16. View patient’s medical history: <code>view mh</code></a></h3>
+<div class="paragraph">
+<p>View an existing patient’s recorded medical history.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="#view-command">entry</a> on the <code>view</code> command.</p>
 </div>
 <div class="paragraph">
 <p>Example(s):</p>
@@ -543,40 +1044,21 @@ The patient must be registered within the system.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>viewmh ic/S1234567A</code></p>
+<p><code>view mh ic/S1234567A</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="view-patient-queue-code-viewqueue-code"><a class="link" href="#view-patient-queue-code-viewqueue-code">3.15. View patient queue: <code>viewqueue</code></a></h3>
+<h3 id="view-patient-s-visitors-code-viewvisitors-code"><a class="link" href="#view-patient-s-visitors-code-viewvisitors-code">3.17. View patient’s visitors: <code>viewvisitors</code></a></h3>
 <div class="paragraph">
-<p>View the current patient queue.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>viewqueue</code></p>
-</div>
-<div class="paragraph">
-<p>Example(s):</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>viewqueue</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="view-patient-s-visitors-code-viewvisitors-code"><a class="link" href="#view-patient-s-visitors-code-viewvisitors-code">3.16. View patient’s visitors: <code>viewvisitors</code></a></h3>
-<div class="paragraph">
-<p>View a patient’s visitors.</p>
+<p>View a particular patient’s visitors.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>viewvisitors ic/PATIENT_NRIC</code></p>
 </div>
 <div class="paragraph">
-<p>Example(s):</p>
+<p>Example:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -587,12 +1069,28 @@ The patient must be registered within the system.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/viewvisitors_screenshot.png" alt="viewvisitors screenshot" width="800">
+<img src="images/viewvisitors_screenshot.png" alt="viewvisitors screenshot" width="1000">
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+If the NRIC does not match that of any checked in patient in the system, an error message will be displayed.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="sign-in-patient-s-visitors-code-visitorin-code"><a class="link" href="#sign-in-patient-s-visitors-code-visitorin-code">3.17. Sign in patient’s visitors: <code>visitorin</code></a></h3>
+<h3 id="sign-in-patient-s-visitors-code-visitorin-code"><a class="link" href="#sign-in-patient-s-visitors-code-visitorin-code">3.18. Sign in patient’s visitors: <code>visitorin</code></a></h3>
 <div class="paragraph">
 <p>Sign in a visitor for a patient.</p>
 </div>
@@ -600,7 +1098,7 @@ The patient must be registered within the system.</p>
 <p>Format: <code>visitorin ic/PATIENT_NRIC v/VISITOR_NAME</code></p>
 </div>
 <div class="paragraph">
-<p>Example(s):</p>
+<p>Example:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -614,9 +1112,41 @@ The patient must be registered within the system.</p>
 <img src="images/visitorin_screenshot.png" alt="visitorin screenshot" width="800">
 </div>
 </div>
+<div class="sidebarblock">
+<div class="content">
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+If the NRIC does not match that of any checked in patient in the system, an error message will be displayed.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+The limit size for a visitor list is five.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="sign-out-patient-s-visitors-code-visitorout-code"><a class="link" href="#sign-out-patient-s-visitors-code-visitorout-code">3.18. Sign out patient’s visitors: <code>visitorout</code></a></h3>
+<h3 id="sign-out-patient-s-visitors-code-visitorout-code"><a class="link" href="#sign-out-patient-s-visitors-code-visitorout-code">3.19. Sign out patient’s visitors: <code>visitorout</code></a></h3>
 <div class="paragraph">
 <p>Sign out a visitor for a patient.</p>
 </div>
@@ -624,7 +1154,7 @@ The patient must be registered within the system.</p>
 <p>Format: <code>visitorout ic/PATIENT_NRIC v/VISITOR_NAME</code></p>
 </div>
 <div class="paragraph">
-<p>Example(s):</p>
+<p>Example:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -635,29 +1165,40 @@ The patient must be registered within the system.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/visitorout_screenshot.png" alt="visitorout screenshot" width="800">
+<img src="images/visitorout_screenshot.png" alt="visitorout screenshot" width="1000">
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+If the NRIC does not match that of any checked in patient in the system, an error message will be displayed.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="cancel-appointment-for-patient-code-xappt-code"><a class="link" href="#cancel-appointment-for-patient-code-xappt-code">3.19. Cancel appointment for patient: <code>xappt</code></a></h3>
-<div class="paragraph">
-<p>Cancels a scheduled appointment for a patient.</p>
+<div class="sidebarblock">
+<div class="content">
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+If the required visitor is not in the patient&#8217;s visitor list, an error message will be displayed.
+</td>
+</tr>
+</table>
 </div>
-<div class="paragraph">
-<p>Format: <code>xappt INDEX</code></p>
 </div>
-<div class="paragraph">
-<p>Example(s):</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>viewappt S1234567A</code><br>
-<code>xappt 2</code><br>
-Deletes the second appointment belonging to patient with NRIC S1234567A.</p>
-</li>
-</ul>
 </div>
 </div>
 <div class="sect2">
@@ -729,7 +1270,7 @@ There is no need to save manually.</p>
 <p><code>adddiet ic/NRIC alg/ALLERGY1 alg/ALLERGY2 cr/CULTURAL_REQUIREMENT pd/PHYSICAL_DIFFICULTY</code></p>
 </li>
 <li>
-<p><code>adddiet ic/S1234567A alg/Egg alg/Crab cr/Halal pd/Hands cannot move.</code></p>
+<p><code>adddiet ic/S1234567A alg/Egg alg/Crab cr/Halal pd/Hands cannot move</code></p>
 </li>
 </ul>
 </div>
@@ -752,10 +1293,10 @@ There is no need to save manually.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>addmh ic/NRIC mh/DIAGNOSIS​</code></p>
+<p><code>addmh ic/NRIC mh/DIAGNOSIS​ doc/DOCTOR-IN-CHARGE</code></p>
 </li>
 <li>
-<p><code>addmh ic/S1234567A mh/Patient shows symptoms of flu. Prescribed 2 weeks of panadol, advised patient to rest and rehydrate.</code></p>
+<p><code>addmh ic/S1234567A mh/Patient shows symptoms of flu. Prescribed 2 weeks of panadol, advised patient to rest and rehydrate. doc/Dr.Zhang De Chou</code></p>
 </li>
 </ul>
 </div>
@@ -765,10 +1306,10 @@ There is no need to save manually.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>checkin ic/NRIC n/NAME p/PHONE_NUMBER a/ADDRESS d/DRUG_ALLERGIES</code></p>
+<p><code>checkin ic/NRIC</code></p>
 </li>
 <li>
-<p><code>checkin ic/S1234567A n/Ling Zhi Yu p/91234567 a/6 College Avenue East, #00-00, University Town, National University of Singapore, 138614 d/nil</code></p>
+<p><code>checkin ic/S1234567A</code></p>
 </li>
 </ul>
 </div>
@@ -782,6 +1323,19 @@ There is no need to save manually.</p>
 </li>
 <li>
 <p><code>checkout ic/S1234567A</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>register</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>register ic/NRIC n/NAME p/PHONE_NUMBER a/ADDRESS d/DRUG_ALLERGIES</code></p>
+</li>
+<li>
+<p><code>register ic/S1234567A n/Ling Zhi Yu p/91234567 a/6 College Avenue East, #00-00, University Town, National University of Singapore, 138614 d/nil</code></p>
 </li>
 </ul>
 </div>
@@ -825,58 +1379,6 @@ There is no need to save manually.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>viewappt</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>viewappt ic/NRIC</code></p>
-</li>
-<li>
-<p><code>viewappt ic/S1234567A</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>viewdiet</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>viewdiet ic/NRIC</code></p>
-</li>
-<li>
-<p><code>viewdiet ic/S1234567A</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>viewmh</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>viewmh ic/NRIC</code></p>
-</li>
-<li>
-<p><code>viewmh ic/S1234567A</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>viewqueue</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>viewqueue</code></p>
-</li>
-<li>
-<p><code>viewqueue</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
 <p><strong>viewvisitors</strong></p>
 </div>
 <div class="ulist">
@@ -915,19 +1417,5 @@ There is no need to save manually.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><strong>xappt</strong></p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>xappt INDEX</code></p>
-</li>
-<li>
-<p><code>viewappt S1234567A</code><br>
-<code>xappt 2</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-10 08:59:25 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-12-25 13:44:53 UTC</div></div></div></body></html>

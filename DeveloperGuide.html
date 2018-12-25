@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Hospital Management System 2K18 - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>HealthBase - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level3">AB-3</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">Hospital Management System 2K18</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2103-AY1819S1-W14-3/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Hospital Management System 2K18 - Developer Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">HealthBase</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2103-AY1819S1-W14-3/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>HealthBase - Developer Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>Team W14-3</code>      Since: <code>Sept 2018</code>      Licence: <code>MIT</code></p>
@@ -29,10 +29,10 @@
 </li>
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#addmeds">3.1. Addmeds</a></li>
-<li><a href="#addappt">3.2. Addappt</a></li>
-<li><a href="#addmh-viewmh">3.3. Addmh/viewmh</a></li>
-<li><a href="#adddiet">3.4. Adddiet</a></li>
+<li><a href="#addappt">3.1. Addappt</a></li>
+<li><a href="#adddiet">3.2. Adddiet</a></li>
+<li><a href="#addmeds">3.3. Addmeds</a></li>
+<li><a href="#addmh">3.4. Addmh</a></li>
 <li><a href="#visitorin-viewvisitors-visitorout">3.5. Visitorin/Viewvisitors/Visitorout</a></li>
 <li><a href="#proposed-data-encryption">3.6. [Proposed] Data Encryption</a></li>
 <li><a href="#logging">3.7. Logging</a></li>
@@ -74,8 +74,16 @@
 <li><a href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">F.1. Launch and shutdown</a></li>
-<li><a href="#deleting-a-patient">F.2. Deleting a patient</a></li>
-<li><a href="#saving-data">F.3. Saving data</a></li>
+<li><a href="#generating-test-data">F.2. Generating test data</a></li>
+<li><a href="#adding-an-appointment-for-a-patient">F.3. Adding an appointment for a patient</a></li>
+<li><a href="#adding-dietary-requirements-for-a-patient">F.4. Adding dietary requirements for a patient</a></li>
+<li><a href="#adding-medication-for-a-patient">F.5. Adding medication for a patient</a></li>
+<li><a href="#adding-a-diagnosis-to-a-patient-s-medical-record">F.6. Adding a diagnosis to a patient&#8217;s medical record</a></li>
+<li><a href="#changing-the-view">F.7. Changing the view</a></li>
+<li><a href="#sorting-the-view">F.8. Sorting the view</a></li>
+<li><a href="#checking-out-a-patient">F.9. Checking out a patient</a></li>
+<li><a href="#checking-in-a-patient">F.10. Checking in a patient</a></li>
+<li><a href="#generating-data">F.11. Generating data</a></li>
 </ul>
 </li>
 </ul>
@@ -163,7 +171,7 @@ Do not disable them. If you have disabled them, go to <code>File</code> &gt; <co
 This will generate all resources required by the application and tests.</p>
 </li>
 <li>
-<p>Open <a href="https://github.com/CS2103-AY1819S1-W14-3/main/tree/master/src/main/java/seedu/address/storage/XmlAdaptedpatient.java"><code>XmlAdaptedpatient.java</code></a> and <a href="https://github.com/CS2103-AY1819S1-W14-3/main/tree/master/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow.java</code></a> and check for any code errors</p>
+<p>Open <a href="https://github.com/CS2103-AY1819S1-W14-3/main/tree/master/src/main/java/seedu/address/storage/XmlAdaptedPerson.java"><code>XmlAdaptedPerson.java</code></a> and <a href="https://github.com/CS2103-AY1819S1-W14-3/main/tree/master/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow.java</code></a> and check for any code errors</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -231,10 +239,10 @@ This will generate all resources required by the application and tests.</p>
 <div class="sect3">
 <h4 id="updating-documentation-to-match-your-fork"><a class="link" href="#updating-documentation-to-match-your-fork">1.4.2. Updating documentation to match your fork</a></h4>
 <div class="paragraph">
-<p>After forking the repo, the documentation will still have the SE-EDU branding and refer to the <code>se-edu/addressbook-level4</code> repo.</p>
+<p>After forking the repo, the documentation will still have the SE-EDU branding and refer to the <code>se-edu/AddressBook-level4</code> repo.</p>
 </div>
 <div class="paragraph">
-<p>If you plan to develop this fork (separate product (i.e. instead of contributing to <code>se-edu/addressbook-level4</code>)) | you should do the following:</p>
+<p>If you plan to develop this fork (separate product (i.e. instead of contributing to <code>se-edu/AddressBook-level4</code>)) | you should do the following:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -409,7 +417,7 @@ The <code>.pptx</code> files used to create diagrams in this document can be fou
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Note how the <code>Model</code> simply raises a <code>AddressBookChangedEvent</code> when the Address Book data are changed, instead of asking the <code>Storage</code> to save the updates to the hard disk.
+Note how the <code>Model</code> simply raises a <code>HealthBaseChangedEvent</code> when HealthBase data are changed, instead of asking the <code>Storage</code> to save the updates to the hard disk.
 </td>
 </tr>
 </table>
@@ -488,7 +496,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><code>Logic</code> uses the <code>AddressBookParser</code> class to parse the user command.</p>
+<p><code>Logic</code> uses the <code>HealthBaseParser</code> class to parse the user command.</p>
 </li>
 <li>
 <p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
@@ -531,7 +539,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
 </li>
 <li>
-<p>stores the Address Book data.</p>
+<p>stores HealthBase data.</p>
 </li>
 <li>
 <p>exposes an unmodifiable <code>ObservableList&lt;patient&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
@@ -548,7 +556,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book</code>, which <code>patient</code> can reference. This would allow <code>Address Book</code> to only require one <code>Tag</code> object per unique <code>Tag</code>, instead of each <code>patient</code> needing their own <code>Tag</code> object. An example of how such a model may look like is given below.<br>
+As a more OOP model, we can store a <code>Tag</code> list in <code>HealthBase</code>, which <code>patient</code> can reference. This would allow <code>HealthBase</code> to only require one <code>Tag</code> object per unique <code>Tag</code>, instead of each <code>patient</code> needing their own <code>Tag</code> object. An example of how such a model may look like is given below.<br>
 <br>
  <span class="image"><img src="images/ModelClassBetterOopDiagram.png" alt="ModelClassBetterOopDiagram" width="800"></span>
 </td>
@@ -576,7 +584,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <p>can save <code>UserPref</code> objects in json format and read it back.</p>
 </li>
 <li>
-<p>can save the Address Book data in xml format and read it back.</p>
+<p>can save HealthBase data in xml format and read it back.</p>
 </li>
 </ul>
 </div>
@@ -596,9 +604,568 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <p>This section describes some noteworthy details on how certain features are implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="addmeds"><a class="link" href="#addmeds">3.1. Addmeds</a></h3>
+<h3 id="addappt"><a class="link" href="#addappt">3.1. Addappt</a></h3>
 <div class="sect3">
 <h4 id="current-implementation"><a class="link" href="#current-implementation">3.1.1. Current implementation</a></h4>
+<div class="paragraph">
+<p>The <code>addappt</code> command provides functionality for users to add an appointment for a given patient.
+This is done by adding appointment-related information to a given person, represented by a <code>Person</code> object.
+This allows for users to track the upcoming appointments for every patient.</p>
+</div>
+<div class="paragraph">
+<p>The adding of appointment-related information is facilitated by the following classes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>AppointmentsList</code>, a list of</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Appointment</code>, each of which have a</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Type</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A more detailed description of the classes follows below:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>AppointmentsList</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Every <code>Person</code> has an <code>AppointmentsList</code>, the purpose of which is to store all <code>Appointment</code> s belonging to a <code>Person</code>.</p>
+</li>
+<li>
+<p>A wrapper class around the internal representation of a list of appointments that exposes only a few select methods in the <code>List</code> API.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The methods relevant to the <code>addappt</code> command from the API are: <code>add</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>Appointment</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Class encapsulating all the information about a particular appointment.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>These information include the type of appointment (enum Type), name of the procedure, date and time of the appointment and the name of the doctor-in-charge of the appointment</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>Type</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>An enumeration that covers all the different types of medical procedures. The four types are:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>PROPAEDEUTIC</code>, with <code>PROP</code> as abbreviation</p>
+</li>
+<li>
+<p><code>DIAGNOSTIC</code>, with <code>DIAG</code> as abbreviation</p>
+</li>
+<li>
+<p><code>THERAPEUTIC</code>, with <code>THP</code> as abbreviation</p>
+</li>
+<li>
+<p><code>SURGICAL</code>, with <code>SRG</code> as abbreviation</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the relevant classes behave at each step.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Activity and sequence diagrams are different ways to represent the execution of a command:<br>
+<strong>The activity diagram provides a general view of the execution</strong> and<br>
+<strong>The sequence diagram provides an intricate view of the execution</strong><br>
+Both diagrams have been included to better aid you through the execution of the <code>addappt</code> command.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The user executes <code>addappt ic/S1234567A type/SRG pn/Heart Bypass dt/27-04-2019 10:30 doc/Dr. Pepper</code>.
+This command has the following intent: Record the following appointment to a patient with NRIC = S1234567A:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 28.5715%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Appt. type</th>
+<th class="tableblock halign-left valign-top">Procedure name</th>
+<th class="tableblock halign-left valign-top">Date and time</th>
+<th class="tableblock halign-left valign-top">Doctor-in-charge</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>SRG</code></p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Heart Bypass</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">27-04-2019 10:30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dr. Pepper</p></td>
+</tr>
+</tbody>
+</table>
+<div id="img-addapptactivitydiagram" class="paragraph">
+<p>The following activity diagram shows the execution of the <code>addappt</code> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddapptActivityDiagram.png" alt="AddapptActivityDiagram" width="1000">
+</div>
+<div class="title">Figure 10. Execution activity of the <code>addappt</code> command</div>
+</div>
+<div id="img-addapptsequencediagram" class="paragraph">
+<p>The following sequence diagram shows the execution of the <code>addappt</code> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddapptSequenceDiagram.png" alt="AddapptSequenceDiagram" width="1000">
+</div>
+<div class="title">Figure 11. Execution sequence of the <code>addappt</code> command</div>
+</div>
+<div class="paragraph">
+<p>With reference to the above figures, the following steps occur upon the execution of the <code>addappt</code> command
+(code snippets have been included for the first 4 steps to further aid understanding):</p>
+</div>
+<div class="listingblock java">
+<div class="content">
+<pre>...
+    @Override
+    public CommandResult execute(String commandText) throws CommandException, ParseException { <i class="conum" data-value="1"></i><b>(1)</b>
+        logger.info("----------------[USER COMMAND][" + commandText + "]");
+        try {
+            Command command = healthBaseParser.parseCommand(commandText); <i class="conum" data-value="2"></i><b>(2)</b>
+            return command.execute(model, history);
+        } finally {
+            history.add(commandText);
+        }
+    }
+...</pre>
+</div>
+</div>
+<div class="listingblock java">
+<div class="content">
+<pre>...
+    public Command parseCommand(String userInput) throws ParseException { <i class="conum" data-value="2"></i><b>(2)</b>
+        final Matcher matcher = BASIC_COMMAND_FORMAT.matcher(userInput.trim());
+        if (!matcher.matches()) {
+            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, HelpCommand.MESSAGE_USAGE));
+        }
+
+        final String commandWord = matcher.group("commandWord");
+        final String arguments = matcher.group("arguments");
+
+        switch (commandWord) {
+
+        case RegisterCommand.COMMAND_WORD:
+            return new RegisterCommandParser().parse(arguments);
+        ...
+        case AddApptCommand.COMMAND_WORD:
+            return new AddApptCommandParser().parse(arguments); <i class="conum" data-value="3"></i><b>(3)</b>
+        ...
+    }
+...</pre>
+</div>
+</div>
+<div class="listingblock java">
+<div class="content">
+<pre>...
+    @Override
+    public AddApptCommand parse(String args) throws ParseException { <i class="conum" data-value="3"></i><b>(3)</b>
+        ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(args, PREFIX_NRIC, PREFIX_TYPE, PREFIX_PROCEDURE,
+                PREFIX_DATE_TIME, PREFIX_DOCTOR);
+
+        if (!arePrefixesPresent(argMultimap, PREFIX_NRIC, PREFIX_TYPE, PREFIX_PROCEDURE,
+                PREFIX_DATE_TIME, PREFIX_DOCTOR) || !argMultimap.getPreamble().isEmpty()) {
+            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddApptCommand.MESSAGE_USAGE));
+        }
+        ...
+        nric = new Nric(patientNric);
+        appt = new Appointment(type, procedure, dateTime, doctor);
+
+        return new AddApptCommand(nric, appt); <i class="conum" data-value="4"></i><b>(4)</b>
+    }
+...</pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The command is executed and passed to an instance of the <code>LogicManager</code> class,</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>which in turn executes <code>HealthBaseParser::parseCommand</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>The <code>HealthBaseParser</code> first parses the command word (<code>addappt</code>),</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>then executes <code>AddApptCommandParser::parse</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>The <code>AddApptCommandParser::parse</code> method returns an <code>AddApptCommand</code> object which encapsulates the necessary information to update the <code>Person</code> 's <code>Appointment</code> (s).
+Control is also passed back to the <code>LogicManager</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>Next, the instance of <code>LogicManager</code> calls <code>AddApptCommand::execute</code>. The <code>AddApptCommand::execute</code> method constructs a new <code>Person</code> object using all the details of the old <code>Person</code> with one exception: the
+<code>AppointmentsList</code> is a copy of the original <code>Person</code> 's <code>AppointmentsList</code> with an added <code>Appointment</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
+<td>This is done by obtaining a <code>Person</code> object from the static method <code>CommandUtil::getPatient</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="8"></i><b>8</b></td>
+<td>then adding the <code>Appointment</code> to the obtained <code>Person</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="9"></i><b>9</b></td>
+<td>This updated <code>Person</code> object is used to update the existing <code>Person</code> by using <code>Model::updatePerson</code> of the backing model.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="10"></i><b>10</b></td>
+<td>Finally, the <code>AddApptCommand::execute</code> method terminates, returning a <code>CommandResult</code> with a success message.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="11"></i><b>11</b></td>
+<td>The <code>LogicManager</code> returns the same <code>CommandResult</code> as the value of the <code>LogicManager::execute</code> method.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="12"></i><b>12</b></td>
+<td>The command execution ends.</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If no/multiple patient(s) with that <code>NRIC</code> exist(s), then the <code>AddApptCommand::execute</code> method will throw a <code>CommandException</code> with the appropriate error message and the usage case will end.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+For the sake of simplicity, some methods in <code>AddApptCommand::execute</code> are excluded from the diagram. These methods check for
+the validity of the command and are not crucial in the sequence of events.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">3.1.2. Design considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-representation-of-types-of-medical-procedures"><a class="link" href="#aspect-representation-of-types-of-medical-procedures">Aspect: Representation of types of medical procedures</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (Current implementation):</strong> Use an <code>Enum</code> for <code>Type</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Makes for easier handling of incorrect values.</p>
+</li>
+<li>
+<p>Cons: Requires more effort to filter and retrieve the different types.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Have a switch case to handle the different types</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Makes the process easier to handle.</p>
+</li>
+<li>
+<p>Cons: Makes the code more difficult to read.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adddiet"><a class="link" href="#adddiet">3.2. Adddiet</a></h3>
+<div class="sect3">
+<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">3.2.1. Current implementation</a></h4>
+<div class="paragraph">
+<p>The <code>adddiet</code> command provides functionality for users to add dietary requirements for a given patient.<br>
+This command allows users to add three different types of dietary requirements: allergy, cultural requirement and physical difficulty.<br>
+This command adds these dietary requirements to a given <code>Person</code> , so that the dietary requirements can be viewed later on.<br>
+This command blocks non-alphabetical or empty input as the detail of a dietary requirement.</p>
+</div>
+<div class="sect4">
+<h5 id="classes-involved"><a class="link" href="#classes-involved">Classes involved</a></h5>
+<div class="paragraph">
+<p>The adding of the dietary requirements involve the following classes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>DietCollection</code>, which is a set of</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Diet</code>, which consists of the detail of the requirement and its type</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>DietType</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A more detailed description of the classes involved is as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Diet Collection</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Every <code>Person</code> object has a <code>Diet Collection</code> object.</p>
+</li>
+<li>
+<p>This class encapsulates a collection of all the dietary requirements of the given patient.</p>
+</li>
+<li>
+<p>This class is a wrapper class around the internal representation of a <code>Set</code> of <code>Diet</code> s.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>Diet</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>This class encapsulates the information of a single dietary requirement.</p>
+</li>
+<li>
+<p>Specifically, an instance of this class is composed of</p>
+<div class="ulist">
+<ul>
+<li>
+<p>a <code>String</code> representing the details of the requirement in text, and</p>
+</li>
+<li>
+<p>a <code>DietType</code> representing the type of this dietary requirement (allergy, cultural requirement, or physical difficulty).</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>DietType</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>This class is an <code>Enum</code> class representing the three different types of dietary requirements.</p>
+</li>
+<li>
+<p>This class is implemented as <code>Enum</code> class to avoid typo and invalid types being entered.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="execution-of-the-command"><a class="link" href="#execution-of-the-command">Execution of the command</a></h5>
+<div class="paragraph">
+<p>Given below is a usage scenario and the details when executing <code>adddiet</code> command.<br>
+For example, when the user executes <code>adddiet ic/S1234567A alg/Egg alg/Crab cr/Halal pd/Hands cannot move</code>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The command text is passed to an instance of the <code>LogicManager</code> class.</p>
+</li>
+<li>
+<p>The <code>LogicManager</code> instance calls <code>HealthBaseParser#parseCommand</code>, which parses the <code>adddiet</code> command word.</p>
+</li>
+<li>
+<p>Next, the <code>AddDietCommandParser#parse</code> method parses the different dietary requirements into one <code>DietCollection</code> object. An instance of <code>AddDietCommand</code> is returned after the parsing.</p>
+</li>
+<li>
+<p><code>LogicManager</code> then execute this <code>AddDietCommand</code> by calling <code>AddDietCommand#execute</code>.</p>
+</li>
+<li>
+<p>In the <code>AddDietCommand#execute</code> method, the new <code>DietCollection</code> object is added to a new copy of the <code>Person</code> object.</p>
+</li>
+<li>
+<p>The new <code>Person</code> object is updated to the model by <code>Model#updatePerson</code> method.</p>
+</li>
+<li>
+<p>A new <code>CommandResult</code> is returned and the execution ends.</p>
+</li>
+</ul>
+</div>
+<div id="img-adddietsequencediagram" class="paragraph">
+<p>Here is the sequence diagram of the typical execution of an <code>adddiet</code> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AdddietSequenceDiagram.png" alt="AdddietSequenceDiagram" width="800">
+</div>
+<div class="title">Figure 12. Execution sequence of the <code>adddiet</code> command</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.2.2. Design considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-to-represent-different-kinds-of-dietary-requirements"><a class="link" href="#aspect-how-to-represent-different-kinds-of-dietary-requirements">Aspect: How to represent different kinds of dietary requirements</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current implementation):</strong> Use a <code>Enum</code> inside the <code>Diet class</code> and contain all <code>Diet</code> in one collection.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Results in less repetitive code and cleaner design.</p>
+</li>
+<li>
+<p>Cons: Requires more effort to filter or retrieve different types of <code>Diet</code> from one <code>DietCollection</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Use polymorphism to extends <code>Diet</code> class and add three different collections to a <code>Person</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Makes it easier to retrieve different types of dietary requirements.</p>
+</li>
+<li>
+<p>Cons: Results in a lot of repetitive code since the three different types do not differ much.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-data-structure-to-hold-the-different-code-diet-code-objects"><a class="link" href="#aspect-data-structure-to-hold-the-different-code-diet-code-objects">Aspect: Data structure to hold the different <code>Diet</code> objects</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current implementation):</strong> Use <code>HashSet</code> and override the <code>hashCode</code> for <code>Diet</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Makes it easier to handle duplication in adding dietary requirement.</p>
+</li>
+<li>
+<p>Cons: Causes the order in which dietary requirements are added to be lost. (However, the sequence is not important for the current set of features implemented.)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Use <code>ArrayList</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Preserves the order in which dietary requirements are added.</p>
+</li>
+<li>
+<p>Cons: Makes it harder to handle duplicates.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="addmeds"><a class="link" href="#addmeds">3.3. Addmeds</a></h3>
+<div class="sect3">
+<h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">3.3.1. Current implementation</a></h4>
 <div class="paragraph">
 <p>The <code>addmeds</code> command provides functionality for users to add prescription-related information for a given patient.
 This is done by adding prescription-related information to a given person, represented by a <code>Person</code> object.
@@ -737,8 +1304,8 @@ This command has the following intent: Prescribe the following medication to a p
 </tbody>
 </table>
 <div class="paragraph">
-<p>The command text is passed to an instance of the <code>LogicManager</code> class, which in turn executes <code>AddressBookParser::parse</code>.<br>
-The <code>AddressBookParser</code> parses the command word (<code>addmeds</code>) and executes <code>AddmedsCommandParser::parse</code>.<br>
+<p>The command text is passed to an instance of the <code>LogicManager</code> class, which in turn executes <code>HealthBaseParser::parse</code>.<br>
+The <code>HealthBaseParser</code> parses the command word (<code>addmeds</code>) and executes <code>AddmedsCommandParser::parse</code>.<br>
 This causes the <code>AddmedsCommandParser</code> to construct the following objects in the following order:<br></p>
 </div>
 <table class="tableblock frame-all grid-all spread">
@@ -821,11 +1388,11 @@ The command execution then ends.</p>
 <div class="content">
 <img src="images/AddmedsSequenceDiagram.png" alt="AddmedsSequenceDiagram" width="800">
 </div>
-<div class="title">Figure 10. Execution sequence of the <code>addmeds</code> command</div>
+<div class="title">Figure 13. Execution sequence of the <code>addmeds</code> command</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">3.1.2. Design considerations</a></h4>
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">3.3.2. Design considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-data-structure-to-support-the-medication-data-storage"><a class="link" href="#aspect-data-structure-to-support-the-medication-data-storage">Aspect: Data structure to support the medication data storage</a></h5>
 <div class="ulist">
@@ -862,319 +1429,238 @@ The command execution then ends.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="addappt"><a class="link" href="#addappt">3.2. Addappt</a></h3>
+<h3 id="addmh"><a class="link" href="#addmh">3.4. Addmh</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">3.2.1. Current implementation</a></h4>
+<h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">3.4.1. Current implementation</a></h4>
 <div class="paragraph">
-<p>The <code>addappt</code> command provides functionality for users to add an appointment for a given patient.
-This is done by adding appointment-related information to a given person, represented by a <code>Person</code> object.
-This allows for users to track the upcoming appointments for every patient.</p>
-</div>
-<div class="paragraph">
-<p>The adding of appointment-related information is facilitated by the following classes:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>AppointmentsList</code>, a list of</p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>Appointment</code>, each of which have a</p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>Type</code></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>A more detailed description of the classes follows below:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>AppointmentsList</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Every <code>Person</code> has an <code>AppointmentsList</code>, the purpose of which is to store all <code>Appointment</code> belonging to a <code>Person</code>.</p>
-</li>
-<li>
-<p>A wrapper class around the internal representation of a list of appointments that exposes only a few select methods in the <code>List</code> API.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>The methods relevant to the <code>addappt</code> command from the API are: <code>add</code>.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>Appointment</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Class encapsulating all the information about a particular appointment.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>These information include the type of appointment (enum Type), name of the procedure, date and time of the appointment and the name of the doctor-in-charge of the appointment</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>Type</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>An enumeration that covers all the different types of medical procedures. The four types are:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>PROPAEDEUTIC</code>, with <code>PROP</code> as abbreviation</p>
-</li>
-<li>
-<p><code>DIAGNOSTIC</code>, with <code>DIAG</code> as abbreviation</p>
-</li>
-<li>
-<p><code>THERAPEUTIC</code>, with <code>THP</code> as abbreviation</p>
-</li>
-<li>
-<p><code>SURGICAL</code>, with <code>SRG</code> as abbreviation</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the relevant classes behave at each step.
-At the end of the explanation is a <a href="https://github.com/CS2103-AY1819S1-W14-3/main/tree/master/src/main/docs/images/AddApptSequenceDiagram.png">sequence diagram</a> of a typical addappt command execution.</p>
-</div>
-<div class="paragraph">
-<p>The user executes <code>addappt ic/S1234567A type/SRG pn/Heart Bypass dt/27-04-2019 1030 doc/Dr. Pepper</code>.
-This command has the following intent: Record the following appointment to a patient with NRIC = S1234567A:</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 14.2857%;">
-<col style="width: 28.5714%;">
-<col style="width: 28.5714%;">
-<col style="width: 28.5715%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Appt. type</th>
-<th class="tableblock halign-left valign-top">Procedure name</th>
-<th class="tableblock halign-left valign-top">Date and time</th>
-<th class="tableblock halign-left valign-top">Doctor-in-charge</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>SRG</code></p></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Heart Bypass</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">27-04-2019 1030</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Dr. Pepper</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>The command is passed to an instance of the <code>LogicManager</code> class, which in turn executes <code>AddressBookParser::parse</code>.
-The <code>AddressBookParser</code> parses the command word (<code>addappt</code>) and executes <code>AddApptCommandParser::parse</code>.</p>
-</div>
-<div class="paragraph">
-<p>The <code>AddApptCommandParser::parse</code> method returns an <code>AddApptCommand</code> object which encapsulates the necessary information to update the Person 's appointments(s).
-Control then passes back to the <code>LogicManager</code>, which calls <code>AddApptCommand::execute</code>.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If no/multiple patient(s) with that <code>NRIC</code> exist(s), then the <code>AddApptCommand::execute</code> method will throw a <code>CommandException</code> with the appropriate error message and the usage case will end.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The <code>AddApptCommand::execute</code> method constructs a new <code>Person</code> object using all the details of the old <code>Person</code>, with the sole difference being the <code>AppointmentsList</code> used being a deep copy of the original <code>Person&#8217;s `AppointmentsList</code> with the new <code>Appointment</code> added.
-This updated <code>Person</code> object is used to update the existing <code>Person</code> object using the <code>Model::updatePerson</code> method (or an overridden version) of the backing model.
-Finally, the <code>AddApptCommand::execute</code> method terminates, returning a <code>CommandResult</code> with a success message. The <code>LogicManager</code> then returns the same <code>CommandResult</code> as the return value of the <code>LogicManager::execute</code> method.
-The command execution then ends.</p>
-</div>
-<div id="img-addapptsequencediagram" class="paragraph">
-<p>The following sequence diagram shows the execution of the <code>addappt</code> command:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/AddApptSequenceDiagram.png" alt="AddApptSequenceDiagram" width="800">
-</div>
-<div class="title">Figure 11. Execution sequence of the <code>addappt</code> command</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.2.2. Design considerations</a></h4>
-<div class="sect4">
-<h5 id="aspect-representation-of-types-of-medical-procedures"><a class="link" href="#aspect-representation-of-types-of-medical-procedures">Aspect: Representation of types of medical procedures</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (Current implementation):</strong> Use an <code>Enum</code> for <code>Type</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Makes for easier handling of incorrect values.</p>
-</li>
-<li>
-<p>Cons: Requires more effort to filter and retrieve the different types.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Have a switch case to handle the different types</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Makes the process easier to handle.</p>
-</li>
-<li>
-<p>Cons: Makes the code more difficult to read.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="addmh-viewmh"><a class="link" href="#addmh-viewmh">3.3. Addmh/viewmh</a></h3>
-<div class="sect3">
-<h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">3.3.1. Current implementation</a></h4>
-<div class="paragraph">
-<p>The functionalities of the <code>addmh</code> and <code>viewmh</code> command are interlinked: the former allows the user to record a diagnosis
-into a patient’s medical history, while the latter permits the viewing of a patient’s past diagnoses as recorded in
-medical history.</p>
-</div>
-<div class="paragraph">
-<p>Each patient’s information is stored within the <code>Person</code> objects. The execution of the <code>addmh</code> command results in the retrieval of
+<p>The function of the <code>addmh</code> command is to allow the user to add a diagnosis to a patient&#8217;s medical history.
+Each patient’s information is stored within the <code>Person</code> objects. The execution of the <code>addmh</code> command results in the retrieval of
 a particular <code>Person</code> object, and the consequent updating of the patient’s <code>MedicalHistory</code>.</p>
-</div>
-<div class="paragraph">
-<p>Similarly, the <code>viewmh</code> command retrieves a particular <code>Person</code> object and displays the <code>Person</code>’s  stored <code>MedicalHistory</code>.</p>
 </div>
 <div class="paragraph">
 <p>Stated below is an example usage scenario and an explanation of the interactions that occurs as a result of the code execution.</p>
 </div>
 <div class="paragraph">
-<p>The user executes the following commands:</p>
+<p>The user executes the following input:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>addmh ic/S9123124A mh/Hypertension, diagnosed “years ago”, well contracted with Metoponol</code></p>
-</li>
-<li>
-<p><code>viewmh ic/S9123124A</code></p>
-</li>
-</ul>
+<div class="paragraph">
+<p><code>addmh ic/S1234567A mh/Hypertension, diagnosed “years ago”, well contracted with Metoponol doc/Dr. Amos</code></p>
 </div>
 <div class="paragraph">
 <p><strong>Intent</strong></p>
 </div>
 <div class="paragraph">
-<p>The purpose of the keyed <code>addmh</code> command line is to register and record a diagnosis under the registered patient with
-the <code>NRIC</code> S9123124A. Subsequently, the <code>viewmh</code> command line accesses the <code>MedicalHistory</code> stored within the <code>Person</code>
-with <code>NRIC</code> S9123124A and displays in the command prompt box.</p>
+<p>The purpose of the entered input is to record a diagnosis issued by <code>Dr.Amos</code>, <code>"Hypertension, diagnosed “years ago”, well contracted with Metoponol"</code>,
+into the medical history of the patient with the NRIC <code>S1234567A</code>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="command-execution"><a class="link" href="#command-execution">3.3.2. Command execution</a></h4>
+<h4 id="command-execution"><a class="link" href="#command-execution">3.4.2. Command execution</a></h4>
 <div class="paragraph">
 <p>The sequence diagram below shows the execution of the given scenario:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/AddmhViewmhSequenceDiagram.png" alt="AddmhViewmhSequenceDiagram" width="800">
+<img src="images/AddmhSequenceDiagram.png" alt="AddmhSequenceDiagram" width="1000">
 </div>
-<div class="title">Figure 12. Execution sequence of the <code>addmh</code> and <code>viewmh</code> commands</div>
+<div class="title">Figure 14. Execution sequence of the <code>addmh</code> command</div>
 </div>
+<div class="paragraph lead">
+<p><code>addmh ic/S1234567A mh/Hypertension, diagnosed “years ago”, well contracted with Metoponol doc/Dr. Amos</code></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Firstly, the <code>String</code> user input is passed into the <code>LogicManager::execute</code> method of the LogicManager instance as the only parameter.</p>
+</li>
+<li>
+<p>Then, the <code>LogicManager::execute</code> method calls <code>HealthBaseParser::parseCommand</code> which receives the user input as a parameter.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>addmh ic/S9123124A mh/Hypertension, diagnosed “years ago”, well contracted with Metoponol</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>When the user-executed <code>addmh</code> line is passed into an instance of the LogicManager class, the method <code>AddressBookParser::parse</code> is executed.
-<code>AddressBookParser</code> then parses the command word <code>addmh</code> and subsequently executes <code>AddmhCommandParser::parse</code>.</p>
+<p>The user input is formatted: the first <code>String</code> token is taken as the command word, while the remaining <code>String</code> is grouped as arguments to be used later in <code>AddmhCommandParser</code>.</p>
 </li>
 <li>
-<p>Next, arguments prefixed by <code>ic/</code> and <code>mh/</code> are parsed into <code>NRIC</code> and <code>Diagnosis</code> objects to be used in the <code>AddmhCommand</code> constructor.</p>
-</li>
-<li>
-<p>The instantiated <code>AddmhCommand</code> will be the medium through which the <code>Person</code> with the <code>NRIC</code> S9123124A is updated.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>In the <code>AddmhCommand#execute</code> method, a new <code>MedicalHistory</code> object is added to a new copy of the <code>Person</code> object.</p>
-</li>
-<li>
-<p>The new <code>Person</code> object is updated by the model by the <code>Model::updatePerson</code> method.</p>
-</li>
-<li>
-<p>A new <code>CommandResult</code> object is returned and the execution ends.</p>
-</li>
-</ul>
-</div>
+<p>From the command word, the HealthBaseParser instance identifies the user input as an <code>addmh</code> command  and constructs an <code>AddmhCommandParser</code> instance.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><code>viewmh ic/S9123124A</code></p>
+<p>Next, the <code>HealthBaseParser</code> calls the <code>AddmhCommandParser::parse</code> method. The <code>AddmhCommandParser</code> takes in the
+remaining string, <code>ic/S1234567A mh/Hypertension, diagnosed “years ago”, well contracted with Metoponol doc/Dr. Amos</code>.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Similarly, the <code>viewmh</code> line is passed to and parsed by the same <code>LogicManager</code> instance.
-With the supplied arguments in the command, the <code>AddressBookParser</code> object creates a <code>ViewmhParser</code>, which subsequently
-instantiates a new <code>ViewmhCommand</code> object.</p>
+<p>The string is tokenised to arguments according to their prefixes.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(args, PREFIX_NRIC, PREFIX_MED_HISTORY, PREFIX_DOCTOR);</code></pre>
+</div>
+</div>
 </li>
 <li>
-<p>The <code>ViewmhCommand#execute</code> method when executed, retrieves the <code>Person</code> with the matching <code>NRIC</code> and displays his
-<code>MedicalHistory</code>, and the execution ends.</p>
+<p>A check on the presence of the relevant prefixes <code>ic/</code>, <code>mh/</code> and <code>doc/</code> is done.</p>
+</li>
+<li>
+<p>If not all prefixes are present, a <code>ParseException</code> will be thrown with an error message on the proper usage of the <code>addmh</code> command.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">if</span> (!arePrefixesPresent(argMultimap, PREFIX_NRIC, PREFIX_MED_HISTORY, PREFIX_DOCTOR)
+        || !argMultimap.getPreamble().isEmpty()) {
+        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="exception">ParseException</span>((<span class="predefined-type">String</span>.format(MESSAGE_INVALID_COMMAND_FORMAT,
+                                                AddmhCommand.MESSAGE_USAGE)));
+}</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Otherwise, <code>Diagnosis</code> and <code>Nric</code>  objects are constructed and used as fields in the creation of an <code>AddmhCommand</code> object.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Command execution ends.</p>
+<p>Subsequently, the newly created <code>AddmhCommand</code> is returned to back to the <code>LogicManager</code> instance through <code>AddmhCommandParser</code> and <code>HealthBaseParser</code> objects.</p>
+</li>
+<li>
+<p>When control is returned to the <code>LogicManager</code> object, it calls the <code>AddmhCommand::execute</code> method.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The method takes in a <code>Model</code> object to access the application’s data context, the stored data of all persons.</p>
+</li>
+<li>
+<p>Its execution sequence may be broken down into the numbered steps in the code below.</p>
 </li>
 </ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> CommandResult execute(Model model, CommandHistory history) <span class="directive">throws</span> CommandException {
+    requireNonNull(model);
+
+    Person patientToUpdate = CommandUtil.getPatient(patientNric, model); <i class="conum" data-value="6"></i><b>(6)</b>
+    Person updatedPatient = addMedicalHistoryForPatient(patientToUpdate, <span class="local-variable">this</span>.newRecord); <i class="conum" data-value="7"></i><b>(7)</b>
+
+    model.updatePerson(patientToUpdate, updatedPatient); <i class="conum" data-value="8"></i><b>(8)</b>
+
+    <span class="keyword">return</span> <span class="keyword">new</span> CommandResult(<span class="predefined-type">String</span>.format(MESSAGE_SUCCESS, patientNric)); <i class="conum" data-value="9"></i><b>(9)</b>
+}</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>The stored persons data is accessed in the <code>CommandUtil::getPatient</code> class method.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Model::getFilteredPersonList</code> is called to search for a person with a <code>Nric</code> that matches the <code>Nric</code> field in the <code>AddmhCommand</code></p>
+</li>
+<li>
+<p>If a match is found, the <code>Person</code> is returned to the <code>AddmhCommand::execute</code> method.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> Person getPatient(Nric nric, Model model) <span class="directive">throws</span> CommandException {
+    ObservableList&lt;Person&gt; matchedCheckedOutPatients = model.getFilteredCheckedOutPersonList()
+        .filtered(p -&gt; nric.equals(p.getNric()));
+
+    <span class="keyword">if</span> (matchedCheckedOutPatients.size() &gt; <span class="integer">0</span>) {
+        <span class="keyword">throw</span> <span class="keyword">new</span> CommandException(MESSAGE_PATIENT_CHECKED_OUT);
+    }
+
+    ObservableList&lt;Person&gt; matchedCheckedInPatients = model.getFilteredPersonList()
+        .filtered(p -&gt; nric.equals(p.getNric()));
+
+    <span class="keyword">if</span> (matchedCheckedInPatients.size() &lt; <span class="integer">1</span>) {
+        <span class="keyword">throw</span> <span class="keyword">new</span> CommandException(MESSAGE_NO_SUCH_PATIENT);
+    }
+
+    <span class="keyword">if</span> (matchedCheckedInPatients.size() &gt; <span class="integer">1</span>) {
+        <span class="keyword">throw</span> <span class="keyword">new</span> CommandException(MESSAGE_MULTIPLE_PATIENTS);
+    }
+
+    <span class="keyword">return</span> matchedCheckedInPatients.get(<span class="integer">0</span>);
+}</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Following that, the <code>Person</code> 's medical history is to be updated.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The person’s current <code>medicalHistory</code> is retrieved, and the <code>Diagnosis</code> field in the <code>AddmhCommand</code> is added it.</p>
+</li>
+<li>
+<p>Then, a new <code>Person</code> is created with the updated fields, as part of the immutability of the <code>Person</code> class.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">private</span> <span class="directive">static</span> Person addMedicalHistoryForPatient(Person patientToEdit, Diagnosis diagnosis) {
+    requireAllNonNull(patientToEdit, diagnosis);
+
+    MedicalHistory updatedMedicalHistory = patientToEdit.getMedicalHistory();
+    updatedMedicalHistory.add(diagnosis);
+
+    <span class="keyword">return</span> patientToEdit.withMedicalHistory(updatedMedicalHistory);
+}</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Then, the old <code>Person</code> 's data will be replaced with the updated <code>Person</code> 's data.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Here the <code>Model::updatePerson</code> method is called, and it subsequently calls the <code>HealthBase::updatePerson</code> method.</p>
+</li>
+<li>
+<p>Replaces the person’s existing data in the storage with the person’s updated data.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="comment">// ModelManager.java</span>
+<span class="directive">public</span> <span class="type">void</span> updatePerson(Person target, Person editedPerson) {
+    requireAllNonNull(target, editedPerson);
+
+    internalHealthBase.updatePerson(target, editedPerson);
+    indicateHealthBaseChanged();
+}
+
+<span class="comment">// HealthBase.java</span>
+<span class="directive">public</span> <span class="type">void</span> updatePerson(Person target, Person editedPerson) {
+    requireNonNull(editedPerson);
+
+    persons.setPerson(target, editedPerson);
+}</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The <code>AddmhCommand::execute</code> execution completes by returning a new <code>CommandResult</code> that contains a success message to its calling method, <code>LogicManager::execute</code>.</p>
+</li>
+<li>
+<p>Finally the <code>CommandResult</code> is returned to the caller of <code>LogicManager::execute</code>, and the execution sequence ends.</p>
+</li>
+</ol>
+</div>
+<hr>
+<div class="paragraph">
+<p>The activity diagram below summarises what happens when a user executes the <code>addmh</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddmhActivityDiagram.png" alt="AddmhActivityDiagram" width="1000">
+</div>
+<div class="title">Figure 15. The activity diagram for the <code>addmh</code> command</div>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -1194,92 +1680,34 @@ with an appropriate error message before the use case ends.
 </div>
 </div>
 </div>
-</div>
-<div class="sect2">
-<h3 id="adddiet"><a class="link" href="#adddiet">3.4. Adddiet</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">3.4.1. Current implementation</a></h4>
-<div class="paragraph">
-<p>The <code>adddiet</code> command provides functionality for users to add dietary requirements for a given patient.<br>
-This command allows users to add three different types of dietary requirements: allergy, cultural requirement and physical difficulty.<br>
-This command adds these dietary requirements to a given <code>Person</code> , so that the dietary requirements can be viewed later on.</p>
-</div>
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">3.4.3. Design Considerations</a></h4>
 <div class="sect4">
-<h5 id="classes-involved"><a class="link" href="#classes-involved">Classes involved</a></h5>
-<div class="paragraph">
-<p>The adding of the dietary requirements involve the following classes:</p>
-</div>
+<h5 id="aspect-how-to-represent-a-timestamp-in-a-diagnosis"><a class="link" href="#aspect-how-to-represent-a-timestamp-in-a-diagnosis">Aspect: How to represent a timestamp in a diagnosis</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p><code>DietCollection</code>, which is a set of</p>
+<p><strong>Alternative 1 (current implementation):</strong> Use a POJO class to represent the timestamp data in the <code>Diagnosis</code> class.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>Diet</code>, which consists of the detail of the requirement and its type</p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>DietType</code>.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>A more detailed description of the classes involved is as follows:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>Diet Collection</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Every <code>Person</code> object has a <code>Diet Collection</code>, which is a collection of all the dietary requirements of the given patient.</p>
+<p>Pros: Results in improved readability and modularity of code, due to a stronger adherence to the Object-Oriented Programming paradigm.</p>
 </li>
 <li>
-<p>This class is a wrapper class around the internal representation of a <code>Set</code> of <code>Diet</code> s.</p>
+<p>Cons: Increases in modularity can make it difficult to find information, if code becomes over-modularised.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><code>Diet</code></p>
+<p><strong>Alternative 2 (alternative implementation):</strong> Use a <code>String</code> to represent the timestamp and contain date-time related functions in the <code>Diagnosis</code> class.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>This class encapsulate the information of a single dietary requirement.</p>
+<p>Pros: Results in more compact code.</p>
 </li>
 <li>
-<p>Specifically, an instance of this class is composed of</p>
-<div class="ulist">
-<ul>
-<li>
-<p>a <code>String</code> representing the details of the requirement in text, and</p>
-</li>
-<li>
-<p>a <code>DietType</code> representing the type of this dietary requirement (allergy, cultural requirement, or physical difficulty).</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>DietType</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>This is a <code>Enum</code> class representing the three different types of dietary requirements.</p>
-</li>
-<li>
-<p>Implemented as <code>Enum</code> class to avoid typo and invalid types being entered.</p>
+<p>Cons: Decreases code modularity, and this decreases code readability.</p>
 </li>
 </ul>
 </div>
@@ -1288,108 +1716,32 @@ This command adds these dietary requirements to a given <code>Person</code> , so
 </div>
 </div>
 <div class="sect4">
-<h5 id="execution-of-the-command"><a class="link" href="#execution-of-the-command">Execution of the command</a></h5>
-<div class="paragraph">
-<p>Given below is an usage scenario and the details when executing <code>adddiet</code> command.<br>
-For example, when the user executes <code>adddiet ic/S1234567A alg/Egg alg/Crab cr/Halal pd/Hands cannot move.</code>:</p>
-</div>
+<h5 id="aspect-how-to-store-medical-history"><a class="link" href="#aspect-how-to-store-medical-history">Aspect: How to store medical history</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p>The command text is passed to an instance of the <code>Logic Manager</code> class.</p>
-</li>
-<li>
-<p>The <code>Logic Manager</code> instance calls <code>AddressBookParser#parseCommand</code>, which parses the <code>adddiet</code> command word.</p>
-</li>
-<li>
-<p>Next, the <code>AddDietCommandParser#parse</code> method parses the different dietary requirements into one <code>DietCollection</code> object. An instance of <code>AddDietCommand</code> is returned after the parsing.</p>
-</li>
-<li>
-<p><code>Logic Manager</code> then execute this <code>AddDietCommand</code> by calling <code>AddDietCommand#execute</code>.</p>
-</li>
-<li>
-<p>In the <code>AddDietCommand#execute</code> method, the new <code>DietCollection</code> object is added to a new copy of the <code>Person</code> object.</p>
-</li>
-<li>
-<p>The new <code>Person</code> object is updated to the model by <code>Model#updatePerson</code> method.</p>
-</li>
-<li>
-<p>A new <code>CommandResult</code> is returned and the execution ends.</p>
-</li>
-</ul>
-</div>
-<div id="img-adddietsequencediagram" class="paragraph">
-<p>Here is the sequence diagram of the typical execution of an <code>adddiet</code> command:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/AdddietSequenceDiagram.png" alt="AdddietSequenceDiagram" width="800">
-</div>
-<div class="title">Figure 13. Execution sequence of the <code>adddiet</code> command</div>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">3.4.2. Design considerations</a></h4>
-<div class="sect4">
-<h5 id="aspect-how-to-represent-different-kinds-of-dietary-requirements"><a class="link" href="#aspect-how-to-represent-different-kinds-of-dietary-requirements">Aspect: How to represent different kinds of dietary requirements</a></h5>
+<p><strong>Alternative 1 (current implementation):</strong> Use an ArrayList to store diagnoses in a person.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current implementation):</strong> Use a <code>Enum</code> inside the <code>Diet class</code> and contain all <code>Diet</code> in one collection.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Results in less repetitive code and cleaner design.</p>
+<p>Pros: Allows expandable storage of diagnoses with its dynamic size. As an ArrayList implements the list interface,
+its contracted functionality suitably represents a list of diagnoses and this makes its usage in developing intuitive.</p>
 </li>
 <li>
-<p>Cons: Requires more effort to filter or retrieve different types of <code>Diet</code> from one <code>DietCollection</code>.</p>
+<p>Cons: Slows down performance if the ArrayList capacity is constantly filled due to resizing costs.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Use polymorphism to extends <code>Diet</code> class and add three different collections to a <code>Person</code>.</p>
+<p><strong>Alternative 2 (alternative implementation):</strong> Use an Array to store diagnoses in a person.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Makes it easier to retrieve different types of dietary requirements.</p>
+<p>Pros: Reduces performance losses that may arise from constant resizing in ArrayLists.</p>
 </li>
 <li>
-<p>Cons: Results in a lot of repetitive code since the three different types do not differ much.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="aspect-data-structure-to-hold-the-different-code-diet-code-objects"><a class="link" href="#aspect-data-structure-to-hold-the-different-code-diet-code-objects">Aspect: Data structure to hold the different <code>Diet</code> objects</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current implementation):</strong> Use <code>HashSet</code> and override the <code>hashCode</code> for <code>Diet</code>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Makes it easier to handle duplication in adding dietary requirement.</p>
-</li>
-<li>
-<p>Cons: Causes the order in which dietary requirements are added to be lost. (However, the sequence is not important for the current set of features implemented.)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Use <code>ArrayList</code>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Preserves the order in which dietary requirements are added.</p>
-</li>
-<li>
-<p>Cons: Makes it harder to handle duplicates.</p>
+<p>Cons: Decreases flexibility in developing as Arrays do not support generics in Java.</p>
 </li>
 </ul>
 </div>
@@ -1406,16 +1758,20 @@ For example, when the user executes <code>adddiet ic/S1234567A alg/Egg alg/Crab 
 <div class="paragraph">
 <p>There three commands related to manage patients' visitors.<br></p>
 </div>
-<div class="paragraph">
-<p>The <code>visitorin</code> command allows user to add visitors into patient&#8217;s visitorList. Every patient will has his/her own <code>VisitorList</code> and
-the maximum number of visitors for a patient is set to be 5 in order to provide patient&#8217;s a comfortable resting environment.<br></p>
-</div>
-<div class="paragraph">
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>visitorin</code> command allows user to add visitors into patient&#8217;s visitorList. Each patient has a <code>VisitorList</code> and
+the maximum size of the list is 5 so that patients can have a comfortable environment.</p>
+</li>
+<li>
 <p>The <code>viewvisitors</code> command allows user to view a patient&#8217;s current visitors in his/her <code>VisitorList</code>. It displays all the visitors from the requested patient&#8217;s
 <code>visitorList</code> in order of entry.<br></p>
-</div>
-<div class="paragraph">
+</li>
+<li>
 <p>The <code>visitorout</code> command allows user to remove a visitor from patient&#8217;s <code>VisitorList</code>.</p>
+</li>
+</ul>
 </div>
 <div class="sect4">
 <h5 id="classes-associated"><a class="link" href="#classes-associated">Classes associated</a></h5>
@@ -1485,11 +1841,42 @@ The <code>viewvisitors</code> command display the <code>Person</code> 's <code>V
 <p>The command inputs are passed to an instance of the <code>LogicManager</code> class.</p>
 </li>
 <li>
-<p><code>AddressBookParser</code> parses the command word (<code>visitorin</code>) and executes <code>VisitorInCommandParser::parse</code>.</p>
+<p><code>HealthBaseParser</code> parses the command word (<code>visitorin</code>) and executes <code>VisitorInCommandParser::parse</code>.</p>
 </li>
 <li>
-<p><code>VisitorInCommandParser::parse</code> construct and a <code>Visitor</code> (Jane), <code>Nric</code> (S1234567A) of the patient provided by the user and then returns <code>VisitorinCommand</code> object.</p>
+<p><code>VisitorInCommandParser::parse</code> construct and a <code>Visitor</code> (Jane), <code>Nric</code> (S1234567A) of the patient provided by the user and then returns <code>VisitorinCommand</code> object.
+Below shows the part of code:</p>
 </li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>public CommandResult execute(Model model, CommandHistory history) throws CommandException {
+        requireNonNull(model);
+
+        Person patientToUpdate = CommandUtil.getPatient(patientNric, model);
+
+        if (patientToUpdate.getVisitorList().getSize() &gt;= 5) {
+            throw new CommandException(MESSAGE_FULL);
+        }
+
+        if (patientToUpdate.getVisitorList().contains(visitorName)) {
+            throw new CommandException(MESSAGE_DUPLICATE_VISITORS);
+        }
+
+        Person updatedPatient = addVisitorForPatient(patientToUpdate, this.visitorName);
+
+        model.updatePerson(patientToUpdate, updatedPatient);
+
+        return new CommandResult(String.format(MESSAGE_SUCCESS, patientNric));
+    }</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p>In <code>VisitorinCommand</code>, new <code>Visitor</code> object is created and added to a copy of the required <code>Person</code> object&#8217;s <code>VisitorList</code></p>
 <div class="ulist">
@@ -1505,7 +1892,17 @@ The <code>viewvisitors</code> command display the <code>Person</code> 's <code>V
 </li>
 </ul>
 </div>
-</li>
+<div class="paragraph">
+<p>Below is <code>visitorin</code> sequence diagram (Figure 1):</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/VisitorinSequenceDiagram.png" alt="VisitorinSequenceDiagram" width="800">
+</div>
+<div class="title">Figure 16. <code>visitorin</code> sequence diagram</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p><code>viewvisitor ic/S1234567A</code></p>
 <div class="ulist">
@@ -1526,13 +1923,58 @@ The <code>viewvisitors</code> command display the <code>Person</code> 's <code>V
 </ul>
 </div>
 </li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Below is <code>viewvisitor</code> sequence diagram (Figure 2):</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ViewvisitorsSequenceDiagram.png" alt="ViewvisitorsSequenceDiagram" width="800">
+</div>
+<div class="title">Figure 17. <code>viewvisitor</code> sequence diagram</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p><code>visitorout ic/S1234567A v/Jane</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Similar to the <code>visitorin</code> command, <code>VisitoroutCommandParser::parse</code> construct and a <code>Visitor</code> (Jane), <code>Nric</code> (S1234567A) of the patient provided by the user and then returns <code>VisitoroutCommand</code> object.</p>
+<p>Similar to the <code>visitorin</code> command, <code>VisitoroutCommandParser::parse</code> construct and a <code>Visitor</code> (Jane), <code>Nric</code> (S1234567A) of the patient provided by the user and then returns <code>VisitoroutCommand</code> object.
+Below shows the part of code:</p>
 </li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>public CommandResult execute(Model model, CommandHistory history) throws CommandException {
+        requireNonNull(model);
+
+        Person selectedPatient = CommandUtil.getPatient(patientNric, model);
+        VisitorList patientVisitorList = selectedPatient.getVisitorList();
+
+        if (patientVisitorList.getSize() == 0) {
+            return new CommandResult(String.format(MESSAGE_NO_VISITORS, patientNric));
+        }
+
+        if (!patientVisitorList.contains(visitorName)) {
+            return new CommandResult(String.format(MESSAGE_NO_REQUIRED_VISITOR, patientNric));
+        }
+
+        Person updatedPatient = removeVisitorForPatient(selectedPatient, this.visitorName);
+
+        model.updatePerson(selectedPatient, updatedPatient);
+
+        return new CommandResult(String.format(MESSAGE_SUCCESS, patientNric));
+    }</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p>In <code>VisitoroutCommand</code>, new <code>Visitor</code> object is created and removed from the copy of the required <code>Person</code> object&#8217;s <code>VisitorList</code></p>
 <div class="ulist">
@@ -1548,33 +1990,21 @@ The <code>viewvisitors</code> command display the <code>Person</code> 's <code>V
 </li>
 </ul>
 </div>
-</li>
-</ul>
-</div>
 <div class="paragraph">
-<p>Here are the three sequence diagrams below:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/VisitorinSequenceDiagram.png" alt="VisitorinSequenceDiagram" width="800">
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/ViewvisitorsSequenceDiagram.png" alt="ViewvisitorsSequenceDiagram" width="800">
-</div>
+<p>Below is <code>visitorout</code> sequence diagram (Figure 3):</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/VisitoroutSequenceDiagram.png" alt="VisitoroutSequenceDiagram" width="800">
 </div>
+<div class="title">Figure 18. <code>visitorout</code> sequence diagram</div>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.6. [Proposed] Data Encryption</a></h3>
 <div class="paragraph">
-<p><em>{Explain here how the data encryption feature will be implemented}</em></p>
+<p>Coming in V2.0.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1682,7 +2112,7 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 <div class="content">
 <img src="images/chrome_save_as_pdf.png" alt="chrome save as pdf" width="300">
 </div>
-<div class="title">Figure 14. Saving documentation as PDF files in Chrome</div>
+<div class="title">Figure 19. Saving documentation as PDF files in Chrome</div>
 </div>
 </div>
 <div class="sect2">
@@ -2007,7 +2437,7 @@ e.g. <code>seedu.address.logic.LogicManagerTest</code></p>
 <div class="sect2">
 <h3 id="managing-dependencies"><a class="link" href="#managing-dependencies">6.6. Managing dependencies</a></h3>
 <div class="paragraph">
-<p>A project often depends on third-party libraries. For example, Hospital Management System 2K18 depends on the <a href="http://wiki.fasterxml.com/JacksonHome">Jackson library</a> for XML parsing. Managing these <em>dependencies</em> can be automated using Gradle. For example, Gradle can download the dependencies automatically, which is better than these alternatives.<br>
+<p>A project often depends on third-party libraries. For example, HealthBase depends on the <a href="http://wiki.fasterxml.com/JacksonHome">Jackson library</a> for XML parsing. Managing these <em>dependencies</em> can be automated using Gradle. For example, Gradle can download the dependencies automatically, which is better than these alternatives.<br>
 a. Include those libraries in the repo (this bloats the repo size)<br>
 b. Require developers to download those libraries manually (this creates extra work for developers)</p>
 </div>
@@ -2141,7 +2571,7 @@ b. Require developers to download those libraries manually (this creates extra w
 </tbody>
 </table>
 <div class="paragraph">
-<p><em>{More to be added}</em></p>
+<p><em>{More to be added in V2.0}</em></p>
 </div>
 </div>
 </div>
@@ -2149,7 +2579,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <h2 id="use-cases"><a class="link" href="#use-cases">Appendix C: Use Cases</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>(For all use cases below, the <strong>System</strong> is the <code>Hospital Management System 2K18 (HMS)</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
+<p>(For all use cases below, the <strong>System</strong> is the <code>HealthBase</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
 </div>
 <h3 id="use-case-delete-patients" class="discrete">Use case: delete patients</h3>
 <div class="paragraph">
@@ -2161,13 +2591,13 @@ b. Require developers to download those libraries manually (this creates extra w
 <p>User requests to list patients</p>
 </li>
 <li>
-<p>HMS shows a list of patients</p>
+<p>HealthBase shows a list of patients</p>
 </li>
 <li>
 <p>User requests to delete a specific patient in the list</p>
 </li>
 <li>
-<p>HMS deletes the patient</p>
+<p>HealthBase deletes the patient</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2190,7 +2620,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a1. HMS shows an error message.</p>
+<p>3a1. HealthBase shows an error message.</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
 </div>
@@ -2210,7 +2640,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <p>Doctor requests to list patient’s medical details</p>
 </li>
 <li>
-<p>HMS shows a list of the patient’s medical details</p>
+<p>HealthBase shows a list of the patient’s medical details</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2227,7 +2657,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a1. HMS shows an error message.</p>
+<p>2a1. HealthBase shows an error message.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2247,7 +2677,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <p>Doctor/Pharmacist requests to list patient’s current medication</p>
 </li>
 <li>
-<p>HMS shows a list of the patient’s current medication</p>
+<p>HealthBase shows a list of the patient’s current medication</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2264,7 +2694,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a1. HMS shows an error message.</p>
+<p>2a1. HealthBase shows an error message.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2284,13 +2714,13 @@ b. Require developers to download those libraries manually (this creates extra w
 <p>User searches the name of a patient</p>
 </li>
 <li>
-<p>HMS shows a list of patients</p>
+<p>HealthBase shows a list of patients</p>
 </li>
 <li>
 <p>User requests to view a patient’s dietary details</p>
 </li>
 <li>
-<p>HMS shows requested details</p>
+<p>HealthBase shows requested details</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2313,7 +2743,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a1. HMS shows an error message.</p>
+<p>3a1. HealthBase shows an error message.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2330,10 +2760,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Counter staff inputs the visited patient’s number</p>
-</li>
-<li>
-<p>HMS displays the number of visitors the patiently currently has</p>
+<p>Counter staff inputs the visited patient’s NRIC</p>
 </li>
 <li>
 <p>Visitor is registered</p>
@@ -2349,11 +2776,11 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. Number of visitors for that patient exceeds maximum number allowed.</p>
+<p>2a. Number of visitors for that patient exceeds maximum number(5) allowed.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a1. HMS rejects visitor.</p>
+<p>2a1. HealthBase rejects visitor.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2370,7 +2797,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Counter staff inputs the visited patient&#8217;s number and visitor name</p>
+<p>Counter staff inputs the visited patient&#8217;s NRIC and visitor name</p>
 </li>
 <li>
 <p>Visitor is signed out</p>
@@ -2396,20 +2823,20 @@ b. Require developers to download those libraries manually (this creates extra w
 </li>
 </ul>
 </div>
-<h3 id="use-case-checkin-patient" class="discrete">Use case: Checkin patient</h3>
+<h3 id="use-case-register-patient" class="discrete">Use case: Register patient</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Counter nurse request to check in patient</p>
+<p>Counter nurse request to register a new patient</p>
 </li>
 <li>
 <p>Counter nurse inputs the patient&#8217;s NRIC</p>
 </li>
 <li>
-<p>HMS adds the patient into the patient queue</p>
+<p>HealthBase adds the patient into the patient queue</p>
 <div class="paragraph">
 <p>Use case ends</p>
 </div>
@@ -2426,7 +2853,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="ulist">
 <ul>
 <li>
-<p>1a1. HMS shows an error message.</p>
+<p>1a1. HealthBase shows an error message.</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
 </div>
@@ -2439,13 +2866,13 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="ulist">
 <ul>
 <li>
-<p>2a1. HMS prompts for additional data.</p>
+<p>2a1. HealthBase prompts for additional data.</p>
 <div class="paragraph">
 <p>User case resumes at step 2.</p>
 </div>
 </li>
 <li>
-<p>3a1. HMS shows an error message.</p>
+<p>3a1. HealthBase shows an error message.</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
 </div>
@@ -2471,7 +2898,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <p>User requests to delete a specific person in the list</p>
 </li>
 <li>
-<p>HMS removes the patient from patient queue</p>
+<p>HealthBase removes the patient from patient queue</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2494,7 +2921,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a1. HMS shows an error message.</p>
+<p>3a1. HealthBase shows an error message.</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
 </div>
@@ -2538,7 +2965,7 @@ b. Require developers to download those libraries manually (this creates extra w
 </ol>
 </div>
 <div class="paragraph">
-<p><em>{More to be added}</em></p>
+<p><em>{More to be added in V2.0}</em></p>
 </div>
 </div>
 </div>
@@ -2567,7 +2994,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <dd>
 <p>Upon check-in of patient, the information of permitted visitors entered</p>
 </dd>
-<dt class="hdlist1"><a id="checkin"></a> Checkin</dt>
+<dt class="hdlist1"><a id="register"></a> Register</dt>
 <dd>
 <p>Patient registers at the hospital</p>
 </dd>
@@ -2610,7 +3037,7 @@ These instructions only provide a starting point for testers to work on; testers
 </li>
 <li>
 <p>Double-click the jar file<br>
-Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.</p>
+Expected: Shows the GUI with a set of sample patients. The window size may not be optimum.</p>
 </li>
 </ol>
 </div>
@@ -2631,32 +3058,30 @@ Expected: The most recent window size and location is retained.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
-</div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-patient"><a class="link" href="#deleting-a-patient">F.2. Deleting a patient</a></h3>
+<h3 id="generating-test-data"><a class="link" href="#generating-test-data">F.2. Generating test data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Deleting a patient while all patients are listed</p>
+<p>Generating patients with mock data</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all patients using the <code>list</code> command. Multiple patients in the list.</p>
+<p>Open the application.</p>
 </li>
 <li>
-<p>Test case: <code>delete 1</code><br>
-Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.</p>
+<p>Run the following commands in the following sequence:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p><code>dev-mode</code> (Enables developer mode; the next command requires developer mode to run.)</p>
 </li>
 <li>
-<p>Test case: <code>delete 0</code><br>
-Expected: No patient is deleted. Error details shown in the status message. Status bar remains the same.</p>
+<p><code>gendata NUMBER_OF_PATIENTS</code>, where <code>NUMBER_OF_PATIENTS</code> is a positive integer value that indicates how many patients you wish to generate.</p>
 </li>
-<li>
-<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size) <em>{give more}</em><br>
-Expected: Similar to previous.</p>
+</ol>
+</div>
 </li>
 </ol>
 </div>
@@ -2664,28 +3089,476 @@ Expected: Similar to previous.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
+<p>The application will then generate that number of patients with mock data for their:</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">F.3. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Dealing with missing/corrupted data files</p>
+<p>Personal particulars</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p><em>{explain how to simulate a missing/corrupted file and the expected behavior}</em></p>
+<p>NRIC</p>
+</li>
+<li>
+<p>Name</p>
+</li>
+<li>
+<p>Phone number</p>
+</li>
+<li>
+<p>Email address</p>
+</li>
+<li>
+<p>Physical address</p>
 </li>
 </ol>
 </div>
+</li>
+<li>
+<p>Drug allergies</p>
+</li>
+<li>
+<p>Medications</p>
+</li>
+<li>
+<p>Appointments</p>
+</li>
+<li>
+<p>Dietary restrictions</p>
+</li>
+<li>
+<p>Medical history</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
+<p>Details on the exact range of values that the mock data can take on can be found in the related <code>.java</code> files.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-an-appointment-for-a-patient"><a class="link" href="#adding-an-appointment-for-a-patient">F.3. Adding an appointment for a patient</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding an appointment for a checked in patient</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Patient must not have an existing appointment at the same Date and Time</p>
+</li>
+<li>
+<p>Test case: <code>addappt ic/S1234567A type/SRG pn/Heart Bypass dt/27-04-2019 10:30 doc/Dr. Pepper</code><br>
+Expected: Appointment is added for patient. To verify, run <code>view appt</code>.</p>
+</li>
+<li>
+<p>Test case: <code>addappt ic/S1234567 type/SRG pn/Heart Bypass dt/27-04-2019 10:30 doc/Dr. Pepper</code><br>
+Expected: Appointment is not added due to the invalid NRIC input.</p>
+</li>
+<li>
+<p>Test case: <code>addappt ic/S1234567A type/SRG pn/Heart Bypass dt/27-04-2019 10:30 doc/Dr. Pepper</code> (after (b) has been run)<br>
+Expected: Appointment is not added due to the duplicate Date and Time from an existing appointment.</p>
+</li>
+<li>
+<p>Test case: <code>addappt ic/S1234567A type/apple pn/Heart Bypass dt/27-04-2019 10:30 doc/Dr. Pepper</code><br>
+Expected: Appointment is not added due to the invalid Type input.</p>
+</li>
+<li>
+<p>Test case: <code>addappt ic/S1234567A type/SRG pn/123 dt/27-04-2019 10:30 doc/Dr. Pepper</code><br>
+Expected: Appointment is not added because Procedure Name must only consist of alphabets.</p>
+</li>
+<li>
+<p>Test case: <code>addappt ic/S1234567A type/SRG pn/Heart Bypass dt/27-04-2019 10:30 doc/Pepper</code><br>
+Expected: Appointment is not added because of the missing salutation for Doctor.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-dietary-requirements-for-a-patient"><a class="link" href="#adding-dietary-requirements-for-a-patient">F.4. Adding dietary requirements for a patient</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding dietary requirements for a checked in patient</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Select a patient in the app using the <code>select</code> command. If there are no patients to be selected, add a new patient using the <code>register</code> command. Let this selected patient&#8217;s NRIC be denoted by <code>$nric</code>. The test cases must be executed in the sequence listed.<br></p>
+</li>
+<li>
+<p>Test case: <code>adddiet ic/$nric alg/Egg alg/Milk cr/Halal pd/Hands cannot move</code><br>
+Expected: Dietary requirements are added for patient. To verify, run <code>view diets</code>.</p>
+</li>
+<li>
+<p>Test case: <code>adddiet ic/$nric cr/Vegetarian</code><br>
+Expected: Dietary requirement is added for patient. To verify, run <code>view diets</code>.</p>
+</li>
+<li>
+<p>Test case: <code>adddiet ic/$nric alg/Egg</code><br>
+Expected: No new dietary requirement is added, since the new allergy has been added before.</p>
+</li>
+<li>
+<p>Test case: <code>adddiet ic/$nric pd/1 hand cannot move.</code><br>
+Expected: Dietary requirement is not added due to the invalid input.</p>
+</li>
+<li>
+<p>Test case: <code>adddiet ic/$nric alg/Fish cr/</code><br>
+Expected: Dietary requirement is not added due to the invalid <code>cr</code> input.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-medication-for-a-patient"><a class="link" href="#adding-medication-for-a-patient">F.5. Adding medication for a patient</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding medication for a given patient</p>
+</li>
+</ol>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Select a patient in the app using the <code>select</code> command. If there are no patients to be selected, add a new patient using the <code>register</code> command. Let this selected patient&#8217;s NRIC be denoted by <code>$nric</code>.</p>
+</li>
+<li>
+<p>Test case: <code>addmeds ic/$nric d/Paracetamol q/2 u/tablets n/4 t/14</code><br>
+Expected: A prescription corresponding to "Paracetamol, 2 tablets 4 times a day for 14 days" is added to the patient&#8217;s medications.</p>
+</li>
+<li>
+<p>Test case: <code>addmeds ic/$nric d/ q/2 u/tablets n/4 t/14</code><br>
+Expected: No prescription is added. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>addmeds ic/$nric d/  q/2 u/tablets n/4 t/14</code> (Whitespace character as drug name)<br>
+Expected: No prescription is added. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>addmeds ic/$nric d/Paracetamol q/0 u/tablets n/4 t/14</code><br>
+Expected: No prescription is added. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>addmeds ic/$nric d/Paracetamol q/-1 u/tablets n/4 t/14</code><br>
+Expected: No prescription is added. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>addmeds ic/$nric d/Paracetamol q/ u/tablets n/4 t/14</code><br>
+Expected: No prescription is added. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>addmeds ic/$nric d/Paracetamol q/A u/tablets n/4 t/14</code><br>
+Expected: No prescription is added. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>addmeds ic/$nric d/Paracetamol q/2 u/ n/4 t/14</code><br>
+Expected: No prescription is added. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>addmeds ic/$nric d/Paracetamol q/2 u/ n/4 t/14</code> (Empty string as input for dosage unit)<br>
+Expected: No prescription is added. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>addmeds ic/$nric d/Paracetamol q/2 u/  n/4 t/14</code> (Whitespace as input for dosage unit)<br>
+Expected: No prescription is added. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>addmeds ic/$nric d/Paracetamol q/2 u/tablets n/0 t/14</code><br>
+Expected: No prescription is added. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>addmeds ic/$nric d/Paracetamol q/2 u/tablets n/-1 t/14</code><br>
+Expected: No prescription is added. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>addmeds ic/$nric d/Paracetamol q/2 u/tablets n/-1 t/14</code><br>
+Expected: No prescription is added. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>addmeds ic/$nric d/Paracetamol q/2 u/tablets n/A t/14</code><br>
+Expected: No prescription is added. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>addmeds ic/$nric d/Paracetamol q/2 u/tablets n/4 t/0</code><br>
+Expected: No prescription is added. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>addmeds ic/$nric d/Paracetamol q/2 u/tablets n/4 t/-1</code><br>
+Expected: No prescription is added. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>addmeds ic/$nric d/Paracetamol q/2 u/tablets n/4 t/0.5</code><br>
+Expected: No prescription is added. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>addmeds ic/$nric d/Paracetamol q/2 u/tablets n/4 t/AAA</code><br>
+Expected: No prescription is added. Error details shown in the status message.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-a-diagnosis-to-a-patient-s-medical-record"><a class="link" href="#adding-a-diagnosis-to-a-patient-s-medical-record">F.6. Adding a diagnosis to a patient&#8217;s medical record</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Add diagnosis to a registered patient while all patients are listed.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Patient must be listed in the list on the panel on the left-hand side. Use the <code>list</code> command to list them, if there are no listed patients.</p>
+</li>
+<li>
+<p>Patient must be registered in HealthBase already.</p>
+</li>
+<li>
+<p>Enter the following commands to set up a test scenario with only one registered patient:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>clear</code></p>
+</li>
+<li>
+<p><code>register ic/S1234567A n/John Doe p/98765432 e/johnd@example.com a/311, Clementi Ave 2, #02-25 da/aspirin da/insulin</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Test case: <code>addmh ic/S1234567A mh/Patient has acute terminal stage brain cancer, refer to Dr.Zhang immediately. doc/Dr.Ross</code><br>
+Expected: Patient&#8217;s diagnosis is successfully added.</p>
+</li>
+<li>
+<p>Test case: <code>addmh ic/ mh/Patient has acute terminal stage brain cancer, refer to Dr.Zhang immediately. doc/Dr.Ross</code><br>
+Expected: Failed addition, NRICs should consist of a starting letter (capital), followed by 7 numerical digits, followed by a letter (again capital). No such patient will exist.</p>
+</li>
+<li>
+<p>Test case: <code>addmh ic/S9876543Z mh/Patient has acute terminal stage brain cancer, refer to Dr.Zhang immediately. doc/Dr.Ross</code><br>
+Expected: Failed addition, patient is not registered, cannot add diagnosis for an unregistered patient.</p>
+</li>
+<li>
+<p>Test case: <code>addmh ic/A1234567Z mh/Patient has acute terminal stage brain cancer, refer to Dr.Zhang immediately. doc/Dr.Ross</code><br>
+Expected: NRICs should consist of a starting letter (capital), followed by 7 numerical digits, followed by a letter (again capital). No such patient will exist.</p>
+</li>
+<li>
+<p>Test case: <code>addmh ic/S12234598675667A mh/Patient has acute terminal stage brain cancer, refer to Dr.Zhang immediately. doc/Dr.Ross</code><br>
+Expected: Failed addition, NRICs should consist of a starting letter (capital), followed by 7 numerical digits, followed by a letter (again capital). No such patient will exist.</p>
+</li>
+<li>
+<p>Test case: <code>addmh ic/S1234567A mh/ doc/Dr.Ross</code><br>
+Expected: Failed addition, diagnosis should not be blank.</p>
+</li>
+<li>
+<p>Test case: <code>addmh ic/S1234567A mh/  doc/Dr.Ross</code><br>
+Expected: Failed addition, diagnosis should not be a whitespace.</p>
+</li>
+<li>
+<p>Test case: <code>addmh ic/S1234567A mh/!$!#!  doc/Dr.Ross</code><br>
+Expected: Patient&#8217;s diagnosis is successfully added, diagnosis does not need to be made up of word letters.</p>
+</li>
+<li>
+<p>Test case: <code>addmh ic/S1234567A mh/Patient has acute terminal stage brain cancer, refer to Dr.Zhang immediately. doc/dr.Ross</code><br>
+Expected: Failed addition, doctor&#8217;s title should precede his full name. The starting letter of all words in the doctor&#8217;s title should be should be spelt out with capitalisation.</p>
+</li>
+<li>
+<p>Test case: <code>addmh ic/S1234567A mh/Patient has acute terminal stage brain cancer, refer to Dr.Zhang immediately. doc/Dr.Ross Geller Stuart Jack Ma Steve Bombamama Nojobs</code><br>
+Expected: Patient&#8217;s diagnosis is successfully added as doctor&#8217;s name is valid.</p>
+</li>
+<li>
+<p>Test case: <code>addmh ic/S1234567A mh/Patient has acute terminal stage brain cancer, refer to Dr.Zhang immediately. doc/</code><br>
+Expected: Failed addition, doctor&#8217;s name should not be blank.</p>
+</li>
+<li>
+<p>Test case: <code>addmh ic/S1234567A mh/Patient has acute terminal stage brain cancer, refer to Dr.Zhang immediately. doc/</code><br>
+Expected: Failed addition, doctor&#8217;s name cannot be a whitespace.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="changing-the-view"><a class="link" href="#changing-the-view">F.7. Changing the view</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Changing the view (right-side panel of the UI)</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: None</p>
+</li>
+<li>
+<p>Test case: <code>view default</code><br>
+Expected: The view changes to a blank panel (the default view).</p>
+</li>
+<li>
+<p>Test case: <code>view appt</code><br>
+Expected: The view changes to the Appointment View.</p>
+</li>
+<li>
+<p>Test case: <code>view diets</code><br>
+Expected: The view changes to the Diet View.</p>
+</li>
+<li>
+<p>Test case: <code>view meds</code><br>
+Expected: The view changes to the Medication View.</p>
+</li>
+<li>
+<p>Test case: <code>view mh</code><br>
+Expected: The view changes to the Medical History view.</p>
+</li>
+<li>
+<p>Test case: <code>view AAA</code><br>
+Expected: The view does not change. An error message is shown.</p>
+</li>
+<li>
+<p>Test case: <code>view</code><br>
+Expected: The view does not change. An error message is shown.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sorting-the-view"><a class="link" href="#sorting-the-view">F.8. Sorting the view</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Sorting a given view</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The current view is a sortable view. Change the view to the Medication View (guaranteed sortable) using <code>view meds</code>.</p>
+</li>
+<li>
+<p>Test case: <code>sort a 1</code><br>
+Expected: The first column is used to sort the entries in the Medication View in ascending order. The natural ordering is lexicographical (for alphabetical data) and numerical (for numerical data).</p>
+</li>
+<li>
+<p>Test case: <code>sort</code><br>
+Expected: The view remains unsorted. An error message is shown.</p>
+</li>
+<li>
+<p>Test case: <code>sort x</code><br>
+Expected: The view remains unsorted. An error message is shown.</p>
+</li>
+<li>
+<p>Test case: <code>sort a</code><br>
+Expected: The view remains unsorted. An error message is shown.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="checking-out-a-patient"><a class="link" href="#checking-out-a-patient">F.9. Checking out a patient</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Checking out a patient who is in the system</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: A patient is registered and checked in to the system, and is visible on the left panel. Let <code>$nric</code> denotes this patient&#8217;s NRIC. Let <code>$nricOther</code> denotes an NRIC of a patient who is not registered in the system. The test cases must be executed in the sequence listed.</p>
+</li>
+<li>
+<p>Test case: <code>checkout ic/$nricOther</code><br>
+Expected: The command fails. Error detail shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>checkout ic/$nric</code><br>
+Expected: The patient with <code>$nric</code> is checked out.</p>
+</li>
+<li>
+<p>Test case: <code>checkout ic/$nric</code><br>
+Expected: The command fails. Error detail shown in the status message.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="checking-in-a-patient"><a class="link" href="#checking-in-a-patient">F.10. Checking in a patient</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Checking in a previously checked out patient</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: A patient is registered and previously checked out from the system. Let <code>$nric</code> denotes this patient&#8217;s NRIC. Let <code>$nricOther</code> denotes an NRIC of a patient who is not registered in the system. The test cases must be executed in the sequence listed.</p>
+</li>
+<li>
+<p>Test case: <code>checkin ic/$nricOther</code><br>
+Expected: The command fails. Error detail shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>checkin ic/$nric</code><br>
+Expected: The patient with <code>$nric</code> is checked in.</p>
+</li>
+<li>
+<p>Test case: <code>checkin ic/$nric</code><br>
+Expected: The command fails. Error detail shown in the status message.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="generating-data"><a class="link" href="#generating-data">F.11. Generating data</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Generating data for testing</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The application must be in developer mode. Toggle developer mode using the <code>dev-mode</code> command.</p>
+</li>
+<li>
+<p>Test case: <code>gendata 10</code><br>
+Expected: The application&#8217;s data is cleared. 10 patients&#8217;s worth of data is generated.</p>
+</li>
+<li>
+<p>Test case: <code>gendata</code><br>
+Expected: No data is generated. An error message is shown.</p>
+</li>
+<li>
+<p>Test case: <code>gendata -1</code><br>
+Expected: No data is generated. An error message is shown.</p>
+</li>
+<li>
+<p>Test case: <code>gendata A</code><br>
+Expected: No data is generated. An error message is shown.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-10 08:59:25 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-12-25 13:44:53 UTC</div></div></div></body></html>
